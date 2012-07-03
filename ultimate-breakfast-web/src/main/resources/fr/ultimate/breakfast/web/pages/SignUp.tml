@@ -1,0 +1,20 @@
+<html t:type="layout" title="Créer un compte"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+      
+	<t:bootstrapTitle title="signup-title" />	
+
+	<div class="hero-unit">	
+		<t:form t:id="form" autofocus="false">
+			<t:errors />
+			<t:textfield t:id="name" class="placeholder" placeholder="${message:signup-name-label}" t:value="name" t:validate="required" /><br />
+			<t:textfield t:id="email" class="placeholder" placeholder="${message:signup-email-label}" t:value="email" t:validate="required,email"/><br />
+			<t:error for="password" />
+			<t:passwordfield t:id="password" class="placeholder" placeholder="${message:signup-password-label}" t:value="password" t:validate="required, minlength=4" /><br />
+			<t:passwordfield t:id="verifyPassword" class="placeholder" placeholder="${message:signup-verifypassword-label}" t:value="verifyPassword" t:validate="required, minlength=4" /><br />					
+			<br />					
+			<t:submit t:value="message:signup-submit-label" class="btn btn-primary"/><br /><br />
+			<t:pagelink page="Index" style="font-size:80%; color:gray">${message:signin-label}</t:pagelink><br/>
+		</t:form>
+	</div>
+</html>

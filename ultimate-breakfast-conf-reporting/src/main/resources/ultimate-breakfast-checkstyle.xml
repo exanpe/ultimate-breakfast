@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: nsis2
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+
+        <!-- Controle de la NoMenclature -->
+        <!-- CNM_NOM_CLAS -->
+	 	<module name="TypeName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_CLAS"/>
+			<property name="severity" value="ERROR"/>
+			<property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+    		<property name="tokens" value="CLASS_DEF"/>
+        </module>
+        <!-- CNM_NOM_PACK -->
+        <module name="PackageName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_PACK"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CNM_NOM_METH -->
+        <module name="MethodName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_METH"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CNM_NOM_VAR -->
+        <module name="LocalVariableName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_VAR"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <module name="LocalFinalVariableName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_VAR"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <module name="StaticVariableName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_VAR"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CNM_NOM_ATTR -->
+        <module name="MemberName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_ATTR"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CNM_NOM_PARAM -->
+        <module name="ParameterName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_PARAM"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CNM_NOM_CONST -->
+        <module name="ConstantName">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CNM_NOM_CONST"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- Controle de la Presentation du Code -->
+        <!-- CPC_LIGN_DECL -->
+        <module name="MultipleVariableDeclarations">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_LIGN_DECL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CPC_LIGN_LONG -->
+        <module name="LineLength">
+        	<metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_LIGN_LONG"/>
+        	<property name="severity" value="WARNING"/>
+        	<property name="max" value="110"/> <!-- max == 80 par defaut -->
+            <property name="ignorePattern" value="^ *\* *[^ ]+$"/> <!-- ignore javadoc "* ..." -->
+        </module>
+        <!-- CPC_OPER_ESPACE -->
+        <!-- CPC_MOT_CLE_ESPACE -->
+        <!-- CPC_COMPARE_ESPACE -->
+        <module name="WhitespaceAround">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_OPER_ESPACE CPC_MOT_CLE_ESPACE CPC_COMPARE_ESPACE"/>
+             <property name="severity" value="ERROR"/>
+             <property name="allowEmptyConstructors" value="true"/>
+             <property name="allowEmptyMethods" value="true"/>
+	         <property name="tokens" value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,TYPE_EXTENSION_AND,WILDCARD_TYPE"/>
+
+	    </module>
+        <!-- CPC_INCR_NO_ESPACE -->
+        <module name="NoWhitespaceAfter">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_INCR_NO_ESPACE"/>
+             <property name="severity" value="ERROR"/>
+	    </module>
+        <!-- CPC_INCR_NO_ESPACE -->
+        <!-- CPC_POINT_VIRG_NO_ESPACE_AV -->
+        <module name="NoWhitespaceBefore">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_INCR_NO_ESPACE CPC_POINT_VIRG_NO_ESPACE_AV"/>
+             <property name="severity" value="ERROR"/>
+	    </module>
+        <!-- CPC_BLOC_ACCOL -->
+        <module name="NeedBraces">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_BLOC_ACCOL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+	 	<!-- CPC_IMPORT_ORDR -->
+		<module name="ImportOrder">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_IMPORT_ORDR"/>
+             <property name="severity" value="ERROR"/>
+             <property name="groups" value="java,javax,org,fr.gouv.defense.terre"/>
+             <property name="ordered" value="true"/>
+             <property name="separated" value="true"/>
+        </module>
+        <!-- CPC_ACCOL_OUVR -->
+        <module name="LeftCurly">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_ACCOL_OUVR"/>
+             <property name="severity" value="ERROR"/>
+             <property name="maxLineLength" value="110"/>
+        </module>
+        <!-- CPC_ACCOL_FERM -->
+        <module name="RightCurly">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_ACCOL_FERM"/>
+             <property name="severity" value="ERROR"/>
+        </module>
+        <!-- CPC_PARENTH_NO_ESPACE -->
+        <module name="ParenPad">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_PARENTH_NO_ESPACE"/>
+             <property name="severity" value="ERROR"/>
+        </module>
+        <!-- CPC_VIRG_ESPACE_AP -->
+        <module name="WhitespaceAfter">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_VIRG_ESPACE_AP"/>
+             <property name="severity" value="ERROR"/>
+             <property name="tokens" value="COMMA,SEMI"/>
+        </module>
+        <!-- CPC_TAB_STYLE -->
+        <module name="ArrayTypeStyle">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_TAB_STYLE"/>
+             <property name="severity" value="ERROR"/>
+        </module>
+        <!-- CPC_INDENT_TYP : A configurer en fixant la valeur du "basicOffset"
+             correspondant au nombre d'espaces pour indenter le contenu d'un bloc -->
+        <!--
+        <module name="Indentation">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CPC_INDENT_TYP"/>
+             <property name="severity" value="ERROR"/>
+             <property name="basicOffset" value="2"/>
+             <property name="braceAdjustment" value="0"/>
+             <property name="caseIndent" value="2"/>
+        </module>
+        -->
+
+		<!-- Controle de l'Auto-Description -->
+		<!-- CAD_DOC_CLAS -->
+        <module name="JavadocStyle">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CAD_DOC_CLAS"/>
+            <property name="severity" value="ERROR"/>
+            <property name="scope" value="private"/>
+            <property name="checkEmptyJavadoc" value="true"/>
+            <property name="checkFirstSentence" value="false"/>
+        </module>
+        <module name="JavadocType">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CAD_DOC_CLAS"/>
+            <property name="severity" value="ERROR"/>
+		</module>
+		<!-- CAD_DOC_ATTR -->
+        <module name="JavadocVariable">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CAD_DOC_ATTR"/>
+            <property name="severity" value="ERROR"/>
+		</module>
+		<!-- CAD_DOC_METH -->
+        <module name="JavadocMethod">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CAD_DOC_METH"/>
+            <property name="severity" value="ERROR"/><!-- authorise @see ou {@inheritDoc} -->
+            <property name="allowMissingParamTags" value="false"/>
+            <property name="allowMissingReturnTag" value="false"/>
+            <property name="allowMissingThrowsTags" value="false"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+    </module>
+
+        <!-- Controle de la Complexite des Classes -->    
+       <!-- CCM_METH_COMPLEX_CYCLO -->
+        <module name="CyclomaticComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_METH_COMPLEX_CYCLO"/>
+            <property name="severity" value="WARNING"/>
+            <property name="max" value="10"/>
+        </module>
+        <!-- CCM_METH_LONG -->
+        <module name="MethodLength">
+           <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_METH_LONG"/>
+           <property name="severity" value="WARNING"/>
+           <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+		   <property name="max" value="150"/>
+		   <property name="countEmpty" value="true"/> <!-- compte lignes vierges -->
+        </module>
+        <!-- CCM_METH_NB_INSTR -->
+        <module name="ExecutableStatementCount">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_METH_NB_INSTR"/>
+            <property name="severity" value="WARNING"/>
+            <property name="max" value="30"/>
+		    <property name="tokens" value="CTOR_DEF,METHOD_DEF,INSTANCE_INIT,STATIC_INIT"/>
+		</module>
+        <!-- CCM_METH_NB_PARAM -->
+        <module name="ParameterNumber">
+        	<metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_METH_NB_PARAM"/>
+        	<property name="severity" value="WARNING"/>
+			<property name="max" value="7"/>
+			<property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+        </module>
+        <!-- CCM_IF_NB_IMBRIQ -->
+        <module name="NestedIfDepth">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_IF_NB_IMBRIQ"/>
+             <property name="max" value="2"/>
+             <property name="severity" value="WARNING"/>
+        </module>
+        <!-- CCM_TRY_NO_IMBRIQ -->
+        <module name="NestedTryDepth">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_TRY_NO_IMBRIQ"/>
+             <property name="max" value="1"/>
+             <property name="severity" value="WARNING"/>
+		</module>
+        <!-- CCC_NB_CLAS_INST -->
+        <module name="ClassDataAbstractionCoupling">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCC_NB_CLAS_INST"/>
+             <property name="max" value="7"/>
+             <property name="severity" value="INFO"/>
+		</module>
+        <!-- CCC_NB_LIENS -->
+        <module name="ClassFanOutComplexity">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCC_NB_LIENS"/>
+             <property name="severity" value="INFO"/>
+             <property name="max" value="20"/>
+		</module>
+        <!-- CCM_NB_CHEMINS -->
+        <module name="NPathComplexity">
+        	<metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_NB_CHEMINS"/>
+        	<property name="severity" value="INFO"/>
+        	<property name="max" value="200"/>
+        </module>
+        <!-- CCM_NB_LIGN_NO_COMM -->
+        <!-- CCC_NB_LIGN_NO_COMM -->
+        <module name="JavaNCSS">
+        	<metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCM_NB_LIGN_NO_COMM CCC_NB_LIGN_NO_COMM"/>
+        	<property name="severity" value="INFO"/>
+        	<property name="methodMaximum" value="50"/><!-- defaut 50 -->
+        	<property name="classMaximum" value="1500"/>
+        	<property name="fileMaximum" value="1500"/>
+        </module>
+	
+		<!-- Controle de la Complexite des Expressions -->
+        <!-- CCE_EXPR_BOOL_COMPLEXE -->
+        <module name="BooleanExpressionComplexity">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCE_EXPR_BOOL_COMPLEXE"/>
+            <property name="severity" value="ERROR"/>
+            <property name="max" value="6"/> <!-- defaut 3 -->
+        </module>
+        <!-- CCE_NO_ASSIGN_MULTI -->
+        <module name="InnerAssignment">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCE_NO_ASSIGN_MULTI"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- CCE_NO_OPER_TERN -->
+        <module name="AvoidInlineConditionals">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="CCE_NO_OPER_TERN"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+	
+        <!-- Verification de la structuration du Flot de Controle -->
+        <!-- VFC_RETURN_MAX -->
+        <module name="ReturnCount">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VFC_RETURN_MAX"/>
+             <property name="severity" value="ERROR"/>
+             <property name="max" value="2"/>
+        </module>
+        <!-- VFC_SWITCH_BREAK -->
+        <module name="FallThrough">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VFC_SWITCH_BREAK"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VFC_SWITCH_DEFAULT -->
+        <module name="MissingSwitchDefault">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VFC_SWITCH_DEFAULT"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <module name="DefaultComesLast">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VFC_SWITCH_DEFAULT"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+	
+        <!-- Analyse de la NoMenclature -->
+        <!-- ANM_NOM_PACK -->
+        <module name="PackageDeclaration">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="ANM_NOM_PACK"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+	
+        <!-- Detection des Constructions a Risque -->
+        <!-- DCR_NO_ASSIGN_APPEL : voir InnerAssignment => CCE_NO_ASSIGN_MULTI -->
+        <!-- DCR_NO_ASSIGN_COND : voir InnerAssignment => CCE_NO_ASSIGN_MULTI -->
+        <!-- DCR_NO_ASSIGN_PARAM -->
+        <module name="ParameterAssignment">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_NO_ASSIGN_PARAM"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_NO_CHAINE_EGAL -->
+        <module name="StringLiteralEquality">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_NO_CHAINE_EGAL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_INDICE_NO_MODIF -->
+        <module name="ModifiedControlVariable">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_INDICE_NO_MODIF"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_CATCH_VIDE_JUSTIF -->
+        <module name="EmptyBlock">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_CATCH_VIDE_JUSTIF"/>
+             <property name="severity" value="ERROR"/>
+             <property name="tokens" value="LITERAL_CATCH"/>
+		</module>
+        <!-- DCR_EXPR_PARENTH -->
+        <module name="UnnecessaryParentheses">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_EXPR_PARENTH"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_NO_BLOC_IMBRIQ -->
+        <module name="AvoidNestedBlocks">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_NO_BLOC_IMBRIQ"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_EQUALS_PARAM_OBJ -->
+        <module name="CovariantEquals">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_EQUALS_PARAM_OBJ"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- DCR_GETINSTANCE_SYNCHRO -->
+        <module name="DoubleCheckedLocking">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="DCR_GETINSTANCE_SYNCHRO"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+	<!-- CGE_NO_PRINT -->
+		<module name="Regexp">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="CGE_NO_PRINT" />
+			<property name="severity" value="WARNING" />
+			<property name="format" value="System\.out\.print" />       
+      <property name="illegalPattern" value="true"/>
+      <property name="ignoreComments" value="true"/>
+			<property name="message"
+				value="CGE_NO_PRINT : ne pas utiliser la classe System, utilisez le Logger." />
+		</module>
+		<module name="Regexp">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="CGE_NO_PRINT" />
+			<property name="severity" value="WARNING" />       
+      <property name="illegalPattern" value="true"/>
+      <property name="ignoreComments" value="true"/>
+			<property name="format" value=".*\.printStackTrace" />
+			<property name="message"
+				value="CGE_NO_PRINT : ne pas utiliser la methode 'printStacktrace()', utilisez le Logger." />
+		</module>
+      <!-- Verification de l'Utilisation des Ressources -->
+        <!-- VUR_NO_MASQ_ATTR -->
+        <module name="HiddenField">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_NO_MASQ_ATTR"/>
+             <property name="severity" value="INFO"/>
+             <property name="ignoreSetter" value="true"/>
+             <property name="ignoreConstructorParameter" value="true"/>
+		</module>
+        <!-- VUR_REDEF_FINALIZE -->
+        <module name="SuperFinalize">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_REDEF_FINALIZE"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VUR_REDEF_CLONE -->
+        <module name="SuperClone">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_REDEF_CLONE"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VUR_REDEF_EQUALS -->
+        <module name="EqualsHashCode">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_REDEF_EQUALS"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VUR_CONSTR_CACHE -->
+        <module name="HideUtilityClassConstructor">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_CONSTR_CACHE"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VUR_CONSTR_PRIVE -->
+        <module name="FinalClass">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_CONSTR_PRIVE"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- VUR_ATTR_PROTEGE -->
+        <module name="VisibilityModifier">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="VUR_ATTR_PROTEGE"/>
+             <property name="severity" value="ERROR"/>
+             <property name="protectedAllowed" value="true"/>
+        </module>
+	
+        <!-- Controle de l'Optimisation du Code -->
+        <!-- COC_NO_IMPORT_NO_UTIL -->
+        <module name="UnusedImports">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_NO_IMPORT_NO_UTIL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- COC_IMPORT_CLAS -->
+        <module name="AvoidStarImport">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_IMPORT_CLAS"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- COC_INSTANCES_INTERDITES -->
+        <module name="IllegalType">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_INSTANCES_INTERDITES"/>
+             <property name="severity" value="ERROR"/>
+            <property name="ignoredMethodNames" value="getInstance"/>
+        </module>
+        <!-- COC_NO_INSTR_VIDES -->
+        <module name="EmptyStatement">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_NO_INSTR_VIDES"/>
+             <property name="severity" value="ERROR"/>
+        </module>
+        <!-- COC_NO_THROWS_NO_UTIL -->
+        <module name="RedundantThrows">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_NO_THROWS_NO_UTIL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- COC_EXPR_BOOL_SIMPL -->
+        <module name="SimplifyBooleanExpression">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_EXPR_BOOL_SIMPL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- COC_RETURN_BOOL_SIMPL -->
+        <module name="SimplifyBooleanReturn">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_RETURN_BOOL_SIMPL"/>
+             <property name="severity" value="ERROR"/>
+		</module>
+        <!-- COC_CHAINE_CONST -->
+        <module name="MultipleStringLiterals">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_CHAINE_CONST"/>
+             <property name="severity" value="WARNING"/>
+		     <property name="allowedDuplicates" value="1"/>
+        </module>
+        <!-- COC_NUMERIC_CONST -->
+        <module name="MagicNumber">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_NUMERIC_CONST"/>
+             <property name="severity" value="WARNING"/>
+             <property name="tokens" value="NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"/>
+             <property name="ignoreNumbers" value="-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10"/>
+		</module>
+	    <!-- COC_NO_CATCH_CLAS_EXCEPT -->
+	    <module name="IllegalCatch">
+             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="COC_NO_CATCH_CLAS_EXCEPT"/>
+         <property name="severity" value="INFO"/>
+		</module>
+	</module>
+		<!-- CCC_FICH_LONG -->
+        <module name="FileLength">
+			<property name="severity" value="WARNING" />
+           <property name="max" value="2000" />
+	</module>  
+
+</module>

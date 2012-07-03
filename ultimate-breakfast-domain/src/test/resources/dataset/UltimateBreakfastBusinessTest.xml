@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataset.xsd">
+
+<!-- Agefos team -->
+<TEAM id="1" name="Agefos" password="age.fos" email="lumm@sopragroup.com"/>
+
+<EATER id="1" name="jmaupoux" position="3" team_id="1"/>
+<EATER id="2" name="edournes" position="4" team_id="1"/>
+<EATER id="3" name="grichard" position="5" team_id="1"/>
+
+</dataset>

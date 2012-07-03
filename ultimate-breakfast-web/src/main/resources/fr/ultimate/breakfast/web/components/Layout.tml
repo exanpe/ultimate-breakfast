@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter"
+	xmlns:ex="tapestry-library:exanpe">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="Exanpe" />
+	<title>${title}</title>
+	<link rel="shortcut icon" type="image/x-icon" href="${contextRoot}/layout/img/favicon.ico"></link>
+</head>
+
+<body>
+	<div class="exanpe-skin">
+
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<t:pagelink page="Index" class="brand">
+						<img src="${asset:context:layout/img/ub-min.png}" alt="Ultimate Breakfast" />
+					</t:pagelink>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li><t:pagelink page="Index"><i class="icon-chevron-right icon-white" /> ${message:home }</t:pagelink></li>
+							<li><t:pagelink page="Console"><i class="icon-chevron-right icon-white" /> ${message:console}</t:pagelink></li>
+						</ul>
+						
+						<ul class="nav pull-right">
+							<t:if test="isAuthenticated()">
+								<li>
+									<t:pagelink page="Index"><i class="icon-user icon-white" />&nbsp; &nbsp;${username}</t:pagelink>
+								</li>
+							</t:if>
+							<li>
+								<t:pagelink page="Help"><i class="icon-chevron-right icon-white" /> ${message:help }</t:pagelink>
+							</li>
+
+							<t:if test="isAuthenticated()">
+								<li><a href="${contextRoot}/j_spring_security_logout"><i class="icon-chevron-right icon-white" /> ${message:logout}</a></li>
+								<p:else>
+									<li><t:pagelink page="SignUp"><i class="icon-chevron-right icon-white" /> ${message:signup }</t:pagelink></li>								
+								</p:else>
+							</t:if>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<t:oldBrowserMessage/>
+			<div class="row-fluid">
+
+				<t:if test="isAuthenticated()">
+					<div class="span3">
+							<div class="well sidebar-nav" id="sidebar">
+								<ul class="nav nav-list">
+									<li class="nav-header">Menu</li>		
+									<ex:verticalMenu t:id="verticalmenu" defaultActiveItem="timetoeat">
+										<ex:verticalMenuItem t:id="timetoeat" />
+										<ex:verticalMenuItem t:id="commit" />
+										<ex:verticalMenuItem t:id="manage" />
+									</ex:verticalMenu>					
+								</ul>
+		
+							</div>
+							<!--/.well -->
+					</div>
+				</t:if>
+				<!--/span-->
+
+				<div class="span9" style="position:relative">
+					<t:help/>
+					<t:body />
+				</div>
+				<!--/span-->
+
+			</div>
+			<!--/row-->
+
+			<hr />
+			<footer>
+				<span>&copy; UltimateBreakfast 2012</span> | 
+				<i class="icon-tags" />&nbsp;<a href="mailto:jmaupoux@sopragroup.com;lguerin@sopragroup.com?subject=[ultimate-breakfast] BUG !">Bug ?</a> | 
+				<i class="icon-envelope" />&nbsp;<a href="mailto:${aScope.adminMail}?subject=[ultimate-breakfast] Contact">${message:admin-contact}</a> |   
+				<i class="icon-download-alt" />&nbsp;<a href="https://github.com/exanpe/ultimate-breakfast" target="_blank">${message:source-code-title}</a>
+			</footer>
+
+		</div>
+		<!--/.fluid-container-->
+
+	</div>
+	<!--/.exanpe-skin-->	
+</body>
+</html>

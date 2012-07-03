@@ -1,0 +1,7 @@
+<t:container 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+	<div class="page-header">
+		<h1>${title}</h1>
+	</div>
+</t:container>

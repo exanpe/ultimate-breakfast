@@ -1,0 +1,18 @@
+<html>
+   <head>
+  	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  </head>
+  <body>
+  	Bonjour,<br/>
+  	Vous êtes convié au petit déjeuner de l'équipe ${teamName} !<br/>
+  	A tout de suite !
+  	
+  	#if( $customMsg )
+  	<br /><br />
+  	<i>
+		PS: $customMsg  	
+  	</i>  	
+  	#end
+
+  </body>
+</html>

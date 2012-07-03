@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.ultimate.breakfast</groupId>
+	<artifactId>ultimate-breakfast</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>ultimate-breakfast</name>
+	<description>Projet UltimateBreakfast</description>
+
+	<scm>
+		<connection>scm:svn:http://</connection>
+		<url>http://svn.ptx.fr.sopra/</url>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j-version>1.6.4</slf4j-version>
+		<tapestry-release-version>5.3.3</tapestry-release-version>
+		<javassist-version>3.12.1.GA</javassist-version>
+		<hibernate-version>4.1.0.Final</hibernate-version>
+		<ehcache-version>2.3.1</ehcache-version>
+		<spring-version>3.1.1.RELEASE</spring-version>
+        <spring-security-version>3.1.0.RELEASE</spring-security-version>
+		<unitils-version>3.1</unitils-version>
+        <hsqldb-version>2.2.8</hsqldb-version>
+		<h2-version>1.3.165</h2-version>
+		<compile-source>1.6</compile-source>
+	</properties>
+
+	<!-- Dependances communes a l'ensemble des modules -->
+	<dependencies>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>		
+		<!-- A dependency on either JUnit or TestNG is required, or the surefire 
+			plugin (which runs the tests) will fail, preventing Maven from packaging 
+			the WAR. Tapestry includes a large number of testing facilities designed 
+			for use with TestNG (http://testng.org/), so it's recommended. -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>5.8</version>
+			<classifier>jdk15</classifier>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Traces -->
+		<!-- slf4j API -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+        <!-- route from log4j call to slf4j -->
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+          <version>${slf4j-version}</version>
+     	</dependency>
+        <!-- logback dependency -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>0.9.30</version>
+        </dependency>
+        <!-- used by logback to process conditions and expressions -->
+        <dependency>
+          <groupId>janino</groupId>
+          <artifactId>janino</artifactId>
+          <version>2.5.10</version>
+        </dependency>
+
+		<!-- BD embarquee pour les tests -->
+	    <!-- HSQL -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+    <!-- Fixing dependencies differencies between 
+      Spring version and Spring security dependencies -->
+    <dependencyManagement>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-tx</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-expression</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${compile-source}</source>
+					<target>${compile-source}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<optimize>false</optimize>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.0.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.1.2</version>
+			</plugin>
+
+			<!-- TODO : configurer le fichier custom -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.0.6</version>
+			</plugin>
+
+		</plugins>
+    
+        <!-- 
+         TODO  : activer apres avoir builder la configuration de reporting
+        <extensions>
+          <extension>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ultimate-breakfast-conf-reporting</artifactId>
+            <version>1.0.0</version>
+          </extension>
+        </extensions>
+         -->
+	</build>
+
+	<reporting>
+		<outputDirectory>${basedir}/target/site</outputDirectory>
+		<excludeDefaults>true</excludeDefaults>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.1.2</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>javadoc</report>
+							<report>surefire-report</report>
+							<report>checkstyle</report>
+							<report>findbugs</report>
+							<report>cobertura</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<!-- TODO : configurer le fichier custom -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.5</version>
+                <configuration>
+                  <minmemory>128m</minmemory>
+                  <maxmemory>512m</maxmemory>
+                  <aggregate>true</aggregate>
+                  <configLocation>
+                    <!-- 
+                      fichier xml contenu dans conf-reporting
+                      decrivant les regles de lumm pour checkstyle
+                    -->
+                   ultimate-breakfast-checkstyle.xml
+                  </configLocation>
+                  <excludes>**/generated/*.java</excludes>
+                </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.3.1</version>
+                <configuration>
+    				<threshold>Normal</threshold>
+    				<findbugsXmlOutput>true</findbugsXmlOutput>
+    				<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+    				<xmlOutput>true</xmlOutput>
+    				<excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
+    			</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<formats>
+						<format>html</format>
+						<format>xml</format>
+					</formats>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<reportSets>
+					<reportSet>
+						<id>default</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<distributionManagement>
+
+	</distributionManagement>
+	
+	<profiles>
+      <profile>
+        <id>prod</id>
+        <activation>
+          <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+          <configuration.active>prod</configuration.active>
+        </properties>
+      </profile>
+      <profile>
+        <id>embedded</id>
+        <properties>
+          <configuration.active>embedded</configuration.active>
+        </properties>
+      </profile>
+    </profiles>
+	
+  <modules>
+    <module>ultimate-breakfast-db</module>
+    <module>ultimate-breakfast-classpath</module>
+    <module>ultimate-breakfast-common</module>
+    <module>ultimate-breakfast-mail</module>
+    <module>ultimate-breakfast-domain-core</module>
+    <module>ultimate-breakfast-domain</module>
+    <module>ultimate-breakfast-web</module>
+	<module>ultimate-breakfast-bundle</module>
+  </modules>
+</project>

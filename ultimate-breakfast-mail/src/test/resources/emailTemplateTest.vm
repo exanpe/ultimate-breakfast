@@ -1,0 +1,6 @@
+<html>
+  <body>
+    <h4>Bonjour ${name}</h4>
+    <i>${text}</i>
+  </body>
+</html>

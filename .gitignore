@@ -1,0 +1,8 @@
+test-output
+bin
+.classpath
+.project
+target
+.metadata
+.settings
+/.git

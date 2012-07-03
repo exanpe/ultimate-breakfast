@@ -1,0 +1,10 @@
+<html t:type="layout" title="Nice Try"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+	<div>
+		<h2>Nice Try</h2>
+		
+		${message:message}
+		
+	</div>
+</html>

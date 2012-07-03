@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+	<!-- 
+		Cache par défaut 
+	-->
+	<defaultCache 
+		eternal="false" 
+		overflowToDisk="true"
+		maxElementsInMemory="2000" 
+		timeToIdleSeconds="3600" 
+		timeToLiveSeconds="7200" />
+
+	<!-- Répertoire ehcache -->
+	<!-- à configurer -->
+	<!-- diskStore path="user.dir/ehcache"/ -->
+
+	<!-- 
+		Cache des requêtes 
+	-->
+	<cache name="org.hibernate.cache.UpdateTimestampsCache" 
+		eternal="true"
+		maxElementsInMemory="1000" />
+
+	<cache name="org.hibernate.cache.StandardQueryCache"
+		eternal="false"
+		maxElementsInMemory="200"  
+		timeToIdleSeconds="3600"
+		timeToLiveSeconds="7200" 
+		overflowToDisk="true" />
+
+	<!-- 
+		Cache des entités 
+	-->
+	<cache name="ultimate-breakfastCacheMetier" 
+		eternal="false"
+		maxElementsInMemory="200"
+		timeToIdleSeconds="1800" 
+		timeToLiveSeconds="3600"
+		overflowToDisk="true" />
+
+	<!-- 
+		Caches des autres régions 
+	-->
+	<cache name="ultimate-breakfastCacheRef" 
+		eternal="false"
+		maxElementsInMemory="5000" 
+		timeToIdleSeconds="3600" 
+		timeToLiveSeconds="7200" 
+		overflowToDisk="true" />
+
+</ehcache>

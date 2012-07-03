@@ -1,0 +1,78 @@
+.jsconsole, .jsconsole pre.output, .jsconsole pre.output span, .jsconsole textarea {
+    border: 0;
+    font-family: "Consolas", "Courier New", "Courier", monospace;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.3;
+}
+.jsconsole {
+    background: #333333;
+    border-radius: 10px 10px 10px 10px;
+    color: #CCCCCC;
+    margin: 30px auto;
+    max-width: 740px;
+    padding: 20px 20px 15px;
+}
+.jsconsole pre.output {
+    border: 0 none;
+    display: block;
+    height: 385px;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0;
+    position: relative;
+    white-space: pre;
+    width: 100%;
+}
+.jsconsole pre.output span {
+    color: #F7F7F7;
+}
+.jsconsole pre.output span.command {
+    color: #CCCCCC;
+    display: block;
+}
+.jsconsole pre.output span.command-motd {
+    color: #DF2D19;
+    display: block;
+    font-family: "Courier New", "Courier", monospace;
+}
+.jsconsole pre.output span.command-confirm {
+    color: blue;
+    display: block;
+}
+.jsconsole pre.output span.command-error {
+    color: #DF2D19;
+    display: block;
+}
+.jsconsole pre.output span.response {
+    color: #777777;
+    padding-right: 5px;
+}
+.jsconsole pre.output span.error {
+    color: #FF7777;
+}
+.jsconsole .input {
+    padding: 0 0 0 15px;
+    position: relative;
+}
+.jsconsole .input:before {
+    color: #DDDDDD;
+    content: ">";
+    left: 0;
+    position: absolute;
+    top: 1px;
+}
+.jsconsole textarea {
+    background: #333333;
+    border: 0 none;
+    color: #F7F7F7;
+    margin: 0;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0;
+    resize: none;
+    width: 100%;
+}
+.jsconsole textarea:focus {
+    outline: 0 none;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter">
+<body>
+	<t:jsconsole id="jsconsole" placeholder="placeholder-msg" motd="${motD}" confirmCommands="deluser" />
+	
+	<script type="text/javascript">
+		<!--
+		if (!Modernizr.input.placeholder)
+	    {	
+			var callbackFocus = function() {
+				if (this.value == this.placeholder) {
+					this.value = '';
+					YAHOO.util.Dom.removeClass(this, 'placeholder');
+				}
+			};
+			
+			var callbackBlur = function() {
+				if (this.value == '' || this.value == this.placeholder) {
+					this.value = this.placeholder;
+					YAHOO.util.Dom.addClass(this, 'placeholder');
+				}
+			};
+			
+			var itemsToBind = YAHOO.util.Dom.getElementsByClassName('placeholder');
+			for(var i = 0; i < itemsToBind.length; i++) {
+				var item = itemsToBind[i];
+				if (item.value === '') {
+					item.value = item.placeholder;
+				}
+				YAHOO.util.Event.addListener(item, 'focus', callbackFocus);
+				YAHOO.util.Event.addListener(item, 'blur', callbackBlur);
+			}	
+	    }
+		// -->
+	</script>
+</body>
+</html>

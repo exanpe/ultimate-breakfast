@@ -1,0 +1,9 @@
+<t:container 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+	
+	<div class="alert alert-error" id="oldBrowserMessage" style="display:none">
+		<t:outputraw value="message:message"/>
+	</div>
+	
+</t:container>

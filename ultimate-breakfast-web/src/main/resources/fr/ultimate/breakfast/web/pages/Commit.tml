@@ -1,0 +1,49 @@
+<html t:type="layout" title="Accueil"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"
+      xmlns:ex="tapestry-library:exanpe">
+	<div>
+		<t:bootstrapTitle title="commit-title" />
+		
+		<t:if test="eaterModel">
+		
+			<t:if test="commitOk">
+				<t:bootstrapAlert type="success" t:id="fade" t:temporary="true">
+					${message:commit-ok}
+				</t:bootstrapAlert>
+			</t:if>
+			
+			<t:bootstrapAlert>
+				${message:select-help}<br/>
+				${message:select-help2}
+			</t:bootstrapAlert>
+			
+			<t:form style="padding:10px;" class="nobanner">
+				<t:errors/>
+			
+				<t:bootstrapThumbnail title="thanks-to">
+					<t:palette encoder="valueEncoder" model="eaterModel" selected="providers"
+			 	           select="asset:classpath:fr/exanpe/t5/lib/components/img/t5/select.png" 
+			 	           deselect="asset:classpath:fr/exanpe/t5/lib/components/img/t5/deselect.png"
+			 	           availableLabel="message:consumers-label"
+			 	           selectedLabel="message:suppliers-label"/>
+		 	    </t:bootstrapThumbnail>
+		 	    <br/><br/>
+		 	    
+		 	    <t:bootstrapThumbnail title="sorry-for">
+					<t:palette  encoder="valueEncoder" model="eaterModel" selected="absents"
+				 	           select="asset:classpath:fr/exanpe/t5/lib/components/img/t5/select.png" 
+				 	           deselect="asset:classpath:fr/exanpe/t5/lib/components/img/t5/deselect.png"
+				 	           availableLabel="message:attending-label"
+			 	           		selectedLabel="message:absents-label"/>
+				</t:bootstrapThumbnail>
+				<br/>
+				<t:submit value="message:process-commit-label" class="btn btn-primary"/>
+			</t:form>
+		
+		<p:else>
+			${message:nobody-found }
+		</p:else>
+		</t:if>
+	</div>
+</html>

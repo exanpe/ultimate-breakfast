@@ -1,0 +1,30 @@
+<html t:type="layout" title="message:lostaccess-title"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"
+      xmlns:ex="tapestry-library:exanpe">
+	<div>
+		
+		<t:bootstrapTitle title="lostaccess-title" />
+
+		<t:bootstrapAlert>
+			${message:description}
+		</t:bootstrapAlert>		
+
+		<t:bootstrapThumbnail>
+			<t:form t:id="form">
+				<t:errors/>
+				<t:label for="name" class="control-label" /> 
+				<t:textfield t:id="name" t:value="name" t:validate="required"/>
+				<br />
+				<t:submit t:value="message:submit-label" class="btn btn-primary"/>
+			</t:form>
+		</t:bootstrapThumbnail>
+		
+		<t:if test="sendOk">
+			<br/><br/>
+			<ex:border>
+				${message:reset-ok}
+			</ex:border>
+		</t:if>
+	</div>
+</html>

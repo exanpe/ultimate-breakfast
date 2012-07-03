@@ -1,0 +1,9 @@
+<!-- http://findbugs.sourceforge.net/manual/filter.html -->
+<FindBugsFilter>
+     <Match>
+       <Class name="*Test" />
+     </Match>
+     <Match>
+       <Bug pattern="MS_MUTABLE_ARRAY,MS_MUTABLE_HASHTABLE,EI_EXPOSE_REP,EI_EXPOSE_REP2" />
+     </Match>     
+</FindBugsFilter>

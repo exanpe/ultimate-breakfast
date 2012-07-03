@@ -1,0 +1,13 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+			 xmlns:p="tapestry:parameter">
+  
+	  <pre class="output" id="output-${clientId}">
+	  
+	  </pre>
+	  <div class="input">
+	  	<textarea id="input-${clientId}" class="placeholder" placeholder="${placeholder}" rows="1">
+	  		
+	  	</textarea>
+	  </div>
+
+</t:container>

@@ -1,0 +1,16 @@
+<html t:type="layout" title="message:help-title"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"
+      xmlns:ex="tapestry-library:exanpe">
+	<div>
+		
+		<div class="hero-unit">
+			<h1>${message:help-title}</h1>
+			<hr/>
+			<p><span class="badge badge-error" style="font-size:18px">1</span> ${message:help-msg1}</p>
+			<p><span class="badge badge-error" style="font-size:18px">2</span> ${message:help-msg2}</p>
+			<p><span class="badge badge-error" style="font-size:18px">3</span> ${message:help-msg3}</p>
+		</div>
+
+	</div>
+</html>

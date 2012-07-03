@@ -1,0 +1,64 @@
+<html t:type="layout" title="Gestion"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+	<div>
+		<t:bootstrapTitle title="manage-title" />
+		
+		<t:bootstrapAlert>
+			${message:select-help}
+		</t:bootstrapAlert>
+		
+		<t:grid t:id="gridEaters" t:source="eaters" t:row="currentEater" t:exclude="id" t:add="edit,delete">
+			<p:editCell>
+				<div align="center">
+					<t:actionlink t:id="initEdit" t:context="currentEater.id" t:zone="editZone">
+						<i class="icon-edit"></i>
+					</t:actionlink>
+				</div>
+			</p:editCell>
+			<p:deleteCell>
+				<div align="center">
+					<t:actionlink t:id="delete" t:context="currentEater.id"
+						t:mixins="exanpe/dialog"
+						t:title="delete-warning"
+						t:message="delete-text"
+						t:yesLabelButton="delete-yes"
+						t:noLabelButton="delete-no">
+						<i class="icon-remove"></i>
+					</t:actionlink>
+				</div>
+			</p:deleteCell>
+			<p:lastUpdateCell>
+				<t:output format="literal:dd/MM/yyyy" value="currentEater.lastUpdate"/>
+			</p:lastUpdateCell>
+			<p:empty>
+				${message:nobody-found}
+			</p:empty>
+		</t:grid>
+		<br/>
+		
+		<t:actionlink t:id="initAdd" t:zone="editZone" class="btn btn-primary">
+			<i class="icon-plus icon-white"></i> ${message:add } 
+		</t:actionlink>
+		<br/><br/>
+		
+		<t:zone id="editZone" t:id="editZone" t:visible="editEater" class="nobanner">
+			<t:if test="editEater">
+				<t:bootstrapAlert>
+					${message:add-help }
+				</t:bootstrapAlert>
+				<t:bootstrapThumbnail>
+					<t:form t:id="form">
+						<t:error for="name"/>
+						<t:label for="name" class="control-label" /> <t:textfield t:id="name" t:value="editEater.name" t:validate="required"/> <br />
+						<t:error for="position"/>
+						<t:label for="position"/> <t:textfield t:id="position" t:value="editEater.position"  t:validate="regexp=^[0-9]*$"/> <br />
+						<t:error for="mail"/>
+						<t:label for="mail"/> <t:textfield t:id="mail" t:value="editEater.email" t:validate="email"/> <br />
+						<t:submit t:value="message:submit-label" class="btn-primary"/>
+					</t:form>
+				</t:bootstrapThumbnail>
+			</t:if>
+		</t:zone>
+	</div>
+</html>

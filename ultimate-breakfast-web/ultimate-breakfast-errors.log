@@ -1,0 +1,194 @@
+06:20:36.562 [ERROR]  o.apache.tapestry5.ioc.Registry - Error invoking constructor public fr.ultimate.breakfast.web.services.ApplicationListener(org.springframework.context.ApplicationContext,boolean) throws java.sql.SQLException: Mail server connection failed; nested exception is javax.mail.MessagingException: Unknown SMTP host: ptx.smtp.corp.sopra;
+  nested exception is:
+	java.net.UnknownHostException: ptx.smtp.corp.sopra. Failed messages: javax.mail.MessagingException: Unknown SMTP host: ptx.smtp.corp.sopra;
+  nested exception is:
+	java.net.UnknownHostException: ptx.smtp.corp.sopra
+06:20:36.593 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:20:36.593 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Eager loading services
+06:20:36.593 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Creating non-proxied instance of service ApplicationListener
+06:20:36.593 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Invoking constructor fr.ultimate.breakfast.web.services.ApplicationListener(ApplicationContext, boolean) (at ApplicationListener.java:55) via fr.ultimate.breakfast.web.services.UltimateBreakfastModule.bind(ServiceBinder) (at UltimateBreakfastModule.java:33) (for service 'ApplicationListener')
+06:26:42.984 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:26:42.984 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:26:42.984 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:form_0
+06:26:42.984 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'send' on TimeToEat:submit_0
+06:26:42.984 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.send().
+06:28:30.437 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 19]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:28:30.437 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:28:30.437 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:form_0
+06:28:30.437 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'send' on TimeToEat:submit_0
+06:28:30.437 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.send().
+06:29:06.687 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 19]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:29:06.687 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:29:06.687 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:form
+06:29:06.687 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'callForBreakfast' on TimeToEat:submit
+06:29:06.687 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+06:32:36.203 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:32:36.203 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:32:36.203 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:form
+06:32:36.203 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'callForBreakfast' on TimeToEat:submit
+06:32:36.203 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+06:34:14.921 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:34:14.921 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:34:14.921 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:form_0
+06:34:14.921 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'send' on TimeToEat:submit_0
+06:34:14.921 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.send().
+06:35:50.437 [ERROR]    t.r.f.u.b.web.pages.TimeToEat - Render queue error in SetupRender[TimeToEat:textarea]: Component TimeToEat:textarea must be enclosed by a Form component.
+org.apache.tapestry5.ioc.internal.util.TapestryException: Component TimeToEat:textarea must be enclosed by a Form component.
+	at org.apache.tapestry5.internal.structure.ComponentPageElementImpl$AbstractPhase.invoke(ComponentPageElementImpl.java:153) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.structure.ComponentPageElementImpl$SetupRenderPhase.render(ComponentPageElementImpl.java:181) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.services.RenderQueueImpl.run(RenderQueueImpl.java:72) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.services.PageRenderQueueImpl.render(PageRenderQueueImpl.java:124) [tapestry-core-5.3.3.jar:na]
+	at $PageRenderQueue_bd1df395cbc8.render(Unknown Source) [na:na]
+	at $PageRenderQueue_bd1df395cbc7.render(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.MarkupRendererTerminator.renderMarkup(MarkupRendererTerminator.java:37) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.services.TapestryModule$30.renderMarkup(TapestryModule.java:1979) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$29.renderMarkup(TapestryModule.java:1963) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$28.renderMarkup(TapestryModule.java:1945) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$27.renderMarkup(TapestryModule.java:1930) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$26.renderMarkup(TapestryModule.java:1916) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$25.renderMarkup(TapestryModule.java:1898) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$24.renderMarkup(TapestryModule.java:1879) [tapestry-core-5.3.3.jar:na]
+	at $MarkupRenderer_bd1df395cbcb.renderMarkup(Unknown Source) [na:na]
+	at $MarkupRenderer_bd1df395cbc6.renderMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.PageMarkupRendererImpl.renderPageMarkup(PageMarkupRendererImpl.java:47) [tapestry-core-5.3.3.jar:na]
+	at $PageMarkupRenderer_bd1df395cbc4.renderPageMarkup(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.PageResponseRendererImpl.renderPageResponse(PageResponseRendererImpl.java:67) [tapestry-core-5.3.3.jar:na]
+	at $PageResponseRenderer_bd1df395cbc0.renderPageResponse(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.PageRenderRequestHandlerImpl.handle(PageRenderRequestHandlerImpl.java:64) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.services.TapestryModule$37.handle(TapestryModule.java:2207) [tapestry-core-5.3.3.jar:na]
+	at $PageRenderRequestHandler_bd1df395cbc2.handle(Unknown Source) [na:na]
+	at $PageRenderRequestHandler_bd1df395cb56.handle(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handlePageRender(ComponentRequestHandlerTerminator.java:48) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.services.InitializeActivePageName.handlePageRender(InitializeActivePageName.java:47) [tapestry-core-5.3.3.jar:na]
+	at $ComponentRequestHandler_bd1df395cb57.handlePageRender(Unknown Source) [na:na]
+	at fr.exanpe.t5.lib.internal.authorize.AuthorizePageFilter.handlePageRender(AuthorizePageFilter.java:96) [exanpe-t5-lib-1.2.0.jar:na]
+	at $ComponentRequestHandler_bd1df395cb57.handlePageRender(Unknown Source) [na:na]
+	at $ComponentRequestHandler_bd1df395cb26.handlePageRender(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.PageRenderDispatcher.dispatch(PageRenderDispatcher.java:45) [tapestry-core-5.3.3.jar:na]
+	at $Dispatcher_bd1df395cb29.dispatch(Unknown Source) [na:na]
+	at $Dispatcher_bd1df395cb23.dispatch(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:302) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26) [tapestry-core-5.3.3.jar:na]
+	at $RequestHandler_bd1df395cb24.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$3.service(TapestryModule.java:902) [tapestry-core-5.3.3.jar:na]
+	at $RequestHandler_bd1df395cb24.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$2.service(TapestryModule.java:892) [tapestry-core-5.3.3.jar:na]
+	at $RequestHandler_bd1df395cb24.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:90) [tapestry-core-5.3.3.jar:na]
+	at $RequestHandler_bd1df395cb24.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:85) [tapestry-ioc-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119) [tapestry-core-5.3.3.jar:na]
+	at $RequestHandler_bd1df395cb24.service(Unknown Source) [na:na]
+	at $RequestHandler_bd1df395cb18.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:253) [tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:53) [tapestry-core-5.3.3.jar:na]
+	at $HttpServletRequestHandler_bd1df395cb1a.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:62) [tapestry-core-5.3.3.jar:na]
+	at $HttpServletRequestFilter_bd1df395cb16.service(Unknown Source) [na:na]
+	at $HttpServletRequestHandler_bd1df395cb1a.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.services.TapestryModule$1.service(TapestryModule.java:852) [tapestry-core-5.3.3.jar:na]
+	at $HttpServletRequestHandler_bd1df395cb1a.service(Unknown Source) [na:na]
+	at $HttpServletRequestHandler_bd1df395cb15.service(Unknown Source) [na:na]
+	at org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:171) [tapestry-core-5.3.3.jar:na]
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212) [jetty-6.1.26.jar:6.1.26]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:311) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:116) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:83) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:101) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:113) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:54) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:45) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilter(BasicAuthenticationFilter.java:150) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:182) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:105) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:173) [spring-security-web-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346) [spring-web-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:259) [spring-web-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.mortbay.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1212) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:399) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.security.SecurityHandler.handle(SecurityHandler.java:216) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:766) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.webapp.WebAppContext.handle(WebAppContext.java:450) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.Server.handle(Server.java:326) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:928) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410) [jetty-6.1.26.jar:6.1.26]
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582) [jetty-util-6.1.26.jar:6.1.26]
+Caused by: java.lang.RuntimeException: Component TimeToEat:textarea must be enclosed by a Form component.
+	at org.apache.tapestry5.corelib.base.AbstractField.setup(AbstractField.java:157) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.corelib.base.AbstractField.setupRender(AbstractField.java) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.structure.ComponentPageElementImpl$SetupRenderPhase.invokeComponent(ComponentPageElementImpl.java:174) ~[tapestry-core-5.3.3.jar:na]
+	at org.apache.tapestry5.internal.structure.ComponentPageElementImpl$AbstractPhase.invoke(ComponentPageElementImpl.java:143) ~[tapestry-core-5.3.3.jar:na]
+	... 104 common frames omitted
+06:43:32.609 [ERROR]  o.apache.tapestry5.ioc.Registry - Exception assembling embedded component 'callForBreakfast' (of type org.apache.tapestry5.corelib.components.ActionLink, within TimeToEat): Component TimeToEat already contains a child component with id 'callForBreakfast'. Embedded component ids must be unique (excluding case, which is ignored).
+06:43:32.609 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:43:32.609 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Constructing instance of page class fr.ultimate.breakfast.web.pages.TimeToEat
+06:43:32.609 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Assembling root component for page TimeToEat
+06:43:32.609 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Assembling component TimeToEat:callforbreakfast (org.apache.tapestry5.corelib.components.ActionLink)
+06:49:07.015 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+06:49:07.015 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:49:07.015 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+06:49:07.015 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'submit' on TimeToEat:callforbreakfast
+06:49:07.015 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+06:51:38.015 [ERROR]  o.apache.tapestry5.ioc.Registry - Component TimeToEat does not contain embedded component 'textfield'.
+06:51:38.015 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+06:51:38.015 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+07:01:12.937 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+07:01:12.937 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:01:12.937 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+07:01:12.937 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'submit' on TimeToEat:callforbreakfast
+07:01:12.937 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+07:02:48.390 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+07:02:48.390 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:02:48.390 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+07:02:48.390 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'submit' on TimeToEat:callforbreakfast
+07:02:48.390 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+07:04:34.453 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+07:04:34.453 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:04:34.453 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+07:04:34.453 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'submit' on TimeToEat:callforbreakfast
+07:04:34.453 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+07:06:40.906 [ERROR]  o.apache.tapestry5.ioc.Registry - A component event handler method returned the value Block[sendOk within TimeToEat, at classpath:fr/ultimate/breakfast/web/pages/TimeToEat.tml, line 12]. Return type org.apache.tapestry5.internal.structure.BlockImpl can not be handled.
+07:06:40.906 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:06:40.906 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Triggering event 'action' on TimeToEat:callforbreakfast
+07:06:40.906 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Triggering event 'submit' on TimeToEat:callforbreakfast
+07:06:40.906 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Handling result from method fr.ultimate.breakfast.web.pages.TimeToEat.callForBreakfast().
+07:14:16.546 [ERROR]  o.apache.tapestry5.ioc.Registry - Exception assembling embedded component 'callForBreakfast2' (of type org.apache.tapestry5.corelib.components.ActionLink, within TimeToEat): Component TimeToEat already contains a child component with id 'callForBreakfast2'. Embedded component ids must be unique (excluding case, which is ignored).
+07:14:16.546 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:14:16.546 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Constructing instance of page class fr.ultimate.breakfast.web.pages.TimeToEat
+07:14:16.546 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Assembling root component for page TimeToEat
+07:14:16.546 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Assembling component TimeToEat:callforbreakfast2 (org.apache.tapestry5.corelib.components.ActionLink)
+07:14:39.281 [ERROR]  o.apache.tapestry5.ioc.Registry - Exception assembling embedded component 'callForBreakfast' (of type org.apache.tapestry5.corelib.components.ActionLink, within TimeToEat): Component TimeToEat already contains a child component with id 'callForBreakfast'. Embedded component ids must be unique (excluding case, which is ignored).
+07:14:39.281 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+07:14:39.281 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Constructing instance of page class fr.ultimate.breakfast.web.pages.TimeToEat
+07:14:39.281 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Assembling root component for page TimeToEat
+07:14:39.281 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 3] Assembling component TimeToEat:callforbreakfast (org.apache.tapestry5.corelib.components.ActionLink)
+08:14:33.265 [ERROR]  o.apache.tapestry5.ioc.Registry - Exception assembling root component of page TimeToEat: Could not convert 'customMsg' into a component parameter binding: Exception generating conduit for expression 'customMsg': Class fr.ultimate.breakfast.web.pages.TimeToEat does not contain a property (or public field) named 'customMsg'.
+08:14:33.265 [ERROR]  o.apache.tapestry5.ioc.Registry - Operations trace:
+08:14:33.265 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 1] Constructing instance of page class fr.ultimate.breakfast.web.pages.TimeToEat
+08:14:33.265 [ERROR]  o.apache.tapestry5.ioc.Registry - [ 2] Assembling root component for page TimeToEat

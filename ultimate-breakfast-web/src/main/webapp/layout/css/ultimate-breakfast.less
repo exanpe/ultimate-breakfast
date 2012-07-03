@@ -1,0 +1,102 @@
+// Import Bootstrap 2 templates
+// -----------------------------
+@import "bootstrap/2.0.3/less/bootstrap.less";
+
+// Import Ultimate Breakfast custom file
+// --------------------------------------
+@import "skins/bootstrap-custom.less";
+
+// Other styles
+// ------------
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+form {
+	margin: 0;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+.thumbnail DIV.t-palette {
+	line-height: 1.6;
+}
+
+#sidebar .exanpe-vmenu {
+	border: 0;
+
+	.vmenu-content {
+		border: 0;
+	}
+	
+	ul li .vmenu-title {
+		background: none;
+		
+		a {
+			color: @linkColor;
+			font-weight: normal;
+		}
+		
+		.exanpe-vmenu-selected {
+			margin-left: -25px;
+			margin-right: -15px;
+			background-color: @linkColor;
+		    color: @white;
+		    font-weight: bold;
+		    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+		    padding-left: 25px; 
+		}			
+	}
+}
+
+.exanpe-skin DIV.t-error {
+	border: 1px solid @linkColor;
+	margin-bottom: 10px;
+	
+		ul {
+			color: @linkColor;
+			li {
+				margin-left: 20px;
+			}
+		}
+		
+		div.t-banner {
+			background-color: @linkColor;
+		}
+}
+
+.ub-help {
+	position: absolute; 
+	top:20px; 
+	right:0; 
+	cursor:help; 
+	color: #999999; 
+	font-size: 11px; 
+	line-height: 36px; 
+	font-style: italic;	
+}
+
+.placeholderField {
+    position: absolute;
+	color: #999999;
+    display: block;
+    font-size: 13px;
+    height: 18px;
+    padding: 4px;
+    line-height: 18px;
+    background: transparent;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.login {
+	color: @linkColor;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.navbar .nav > li > a {
+    color: @linkColor;
+}

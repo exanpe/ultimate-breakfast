@@ -1,0 +1,77 @@
+<configuration>
+
+  <property name="application-log-level" value="DEBUG" />
+  <!-- Log home is parameterized from .properties. Can be hard coded here using a System/env var -->
+  <property name="LOG_HOME" value="./" />
+
+  <!-- 
+    Appender for errors.
+    Only log error.
+    Daily rollover with 60 days history zipped.
+  -->
+  <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    
+    <!-- Filter. Only ERROR allowed -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>ERROR</level>
+    </filter>
+
+    <!-- Filename -->
+    <file>${LOG_HOME}/ultimate-breakfast-errors.log</file>
+   
+    <!-- Encoder -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%-5level] %32logger{32} - %msg%n</pattern>
+    </encoder>
+    
+    <!-- Daily rollover. Zip on rollover and keep 60 days history -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>ultimate-breakfast-errors.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+      <maxHistory>60</maxHistory>
+    </rollingPolicy>
+    
+  </appender>
+  
+  <!-- 
+  Appender for every log of the application (mainly < ERROR) 
+  Rolling size logger.
+  Max 10 log file of 10M, zipped on rotate
+   -->
+  <appender name="APP_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+   
+    <!-- Filename -->
+    <file>${LOG_HOME}/ultimate-breakfast.log</file>
+    
+    <!-- Encoder -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%-5level] %32logger{32} - %msg%n%ex{short}</pattern>
+    </encoder>
+    
+    <!-- Rolling -->
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+      <fileNamePattern>ultimate-breakfast.%i.log.zip</fileNamePattern>
+      <minIndex>1</minIndex>
+      <maxIndex>10</maxIndex>
+    </rollingPolicy>
+
+    <!-- Rolling trigger -->
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+      <maxFileSize>10MB</maxFileSize>
+    </triggeringPolicy>
+    
+  </appender>
+
+  <!-- Do not write if only set -->
+  <if condition='!property("application-log-level").equalsIgnoreCase("ERROR")'>
+    <then>
+      <logger name="fr.ultimate.breakfast" level="${application-log-level}">
+        <appender-ref ref="APP_LOG" />
+      </logger>
+    </then>
+  </if>
+  
+
+  <root level="ERROR">
+    <appender-ref ref="ERROR_LOG" />
+  </root>
+</configuration>

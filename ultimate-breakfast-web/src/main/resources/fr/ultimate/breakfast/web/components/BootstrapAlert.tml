@@ -1,0 +1,26 @@
+<t:container 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+	
+	<div class="alert alert-${type}" id="${clientId}">
+		<t:body />
+	</div>
+	
+	<t:if test="temporary">
+		<script type="text/javascript">
+	   		var aniObj${clientId} = new YAHOO.util.Anim(  
+    	      "${clientId}" ,   
+    	      { opacity: {from: 1, to: 0 } },   
+    	      '3',   
+    	      YAHOO.util.Easing.easeIn 
+    	    );  
+	   		
+	   		aniObj${clientId}.onComplete.subscribe(function(){document.getElementById("${clientId}").style.display="none";})
+	   		
+	   		window.setTimeout("aniObj${clientId}.animate()", 3000);
+	   		
+	   		aniObj${clientId}.animate();
+		</script>
+	</t:if>
+	
+</t:container>

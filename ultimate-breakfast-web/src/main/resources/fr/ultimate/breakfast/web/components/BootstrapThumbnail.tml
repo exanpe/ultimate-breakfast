@@ -1,0 +1,14 @@
+<t:container 
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" 
+	xmlns:p="tapestry:parameter">
+
+	<div class="thumbnail">
+		<div class="caption">
+			<t:if test="title">
+				<h5>${title}</h5>
+				<br />
+			</t:if>
+			<t:body />
+		</div>
+	</div>
+</t:container>

@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.ultimate.breakfast</groupId>
+	<artifactId>ultimate-breakfast-conf-reporting</artifactId>
+  
+    <!-- 
+      La version doit être manuellement incrémentée a chaque nouvelle version 
+      En version non SNAPSHOT pour permettre un mvn:release 
+    -->
+	<version>1.0.0</version>
+	<name>ultimate-breakfast-conf-reporting</name>
+	<packaging>jar</packaging>
+
+	<!-- TODO : a completer post generation -->
+
+	<!-- Scm -->	
+	<scm>
+		<connection>scm:svn:http://</connection>
+		<developerConnection>scm:svn:http://</developerConnection>
+		<url>http://</url>
+	</scm>	
+
+	<!-- Ditribution -->
+	<distributionManagement>
+
+	</distributionManagement>	
+	
+</project>
+

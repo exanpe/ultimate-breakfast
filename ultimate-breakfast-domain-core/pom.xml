@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>ultimate-breakfast</artifactId>
+		<groupId>fr.ultimate.breakfast</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>ultimate-breakfast-domain-core</artifactId>
+	<name>ultimate-breakfast-domain-core</name>
+	<description>
+		Module contenant les classes qui constituent le socle technique de l'application, utilisées 
+		par les différents modules métiers.
+		Ce module est à la charge, et sous la responsabilité, du référent technique de l'application.
+	</description>
+
+	<dependencies>
+	
+		<!-- Dependances -->
+		<dependency>
+			<artifactId>ultimate-breakfast-common</artifactId>
+			<groupId>${project.groupId}</groupId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>	
+	
+		<!-- Hibernate -->
+		<!-- Use the implementation of the JTA Library provided by Geronimo. This 
+			implementation does not have a licensing issue. This allow developpers to 
+			get all the dependencies without have to hack their settings.xml file or 
+			install the dependency manually. -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate-version}</version>
+		</dependency>
+        <dependency>
+          <artifactId>c3p0</artifactId>
+          <groupId>c3p0</groupId>
+          <version>0.9.1.2</version>
+        </dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jta_1.1_spec</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<!-- Spring -->
+		<!-- Spring Framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+	</dependencies>
+
+    <!-- H2 for both profiles -->
+    <profiles>
+      <profile>
+        <id>embedded</id>  
+        <dependencies>
+          <dependency>
+              <groupId>com.h2database</groupId>
+              <artifactId>h2</artifactId>
+              <version>${h2-version}</version>
+            </dependency>
+        </dependencies>
+      </profile>
+      <profile>
+        <id>prod</id> 
+        <activation>
+          <activeByDefault>true</activeByDefault>
+        </activation> 
+        <dependencies>
+          <!-- HSQL -->
+            <dependency>
+              <groupId>com.h2database</groupId>
+              <artifactId>h2</artifactId>
+              <version>${h2-version}</version>
+            </dependency>
+        </dependencies>
+      </profile>
+    </profiles>
+  
+</project>

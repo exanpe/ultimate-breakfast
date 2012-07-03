@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+  <!-- 
+    Injection par annotation 
+  -->
+  <context:annotation-config />
+  <context:component-scan base-package="fr.ultimate.breakfast" />
+  
+  <!-- Chargement du fichier de configuration dans le classpath -->
+  <beans profile="prod">
+    <context:property-placeholder 
+      location="classpath*:ultimate-breakfast.properties"
+      ignore-unresolvable="true" order="1"/>
+  </beans>
+
+  <!-- En mode embedded, chargement du fichier contenant l'ensemble des confs externes -->
+  <beans profile="embedded">
+    <context:property-placeholder
+      ignore-unresolvable="true"
+      location="classpath*:conf-embedded.properties" order="2"/>
+  </beans>
+  
+</beans>

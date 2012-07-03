@@ -1,0 +1,91 @@
+<html t:type="layout" title="${message:timetoeat-title}"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter"
+      xmlns:ex="tapestry-library:exanpe">
+	<div>
+		
+		<t:bootstrapTitle title="timetoeat-title" />
+		
+		<t:if test="eaters">
+			<t:zone t:id="submitZone" visible="false"/>
+		
+			<t:block id="sendOk">
+				<t:bootstrapAlert type="success" t:id="fade" t:temporary="true">					
+					${message:sent-ok}
+				</t:bootstrapAlert>
+			</t:block>
+			<t:block id="sendEmpty">
+				<t:bootstrapAlert type="error">
+					${message:sent-empty}
+				</t:bootstrapAlert>
+			</t:block>
+			<t:block id="sendFailure">
+				<t:bootstrapAlert type="error">
+					${message:sent-failure }
+				</t:bootstrapAlert>
+			</t:block>
+			
+			<t:bootstrapAlert>
+				${message:help-alert}
+			</t:bootstrapAlert>
+					
+			<t:form t:id="callForBreakfast" t:zone="submitZone">
+				<i class="icon-volume-up"></i> &nbsp; 
+				<t:submit t:id="call" t:event="callForBreakfast" t:value="message:callForBreakfast" class="btn btn-info" 
+				          t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog" />
+				<div id="customMsgDialog">
+					${message:custom-msg-label} <br /><br />
+					<t:textarea t:id="customMsgCall" value="customMsgCall"></t:textarea>						
+				</div>				
+			</t:form>
+				
+			<br/><hr/>
+			
+			<t:if test="lastNotif">
+				<ex:border>
+					${message:last-send } : <t:output format="literal:dd/MM/yyyy" value="lastNotif"/>
+				</ex:border>
+				<br/>
+			</t:if>
+			
+			<t:bootstrapAlert>
+				${message:select-help}<br/>
+				${message:select-help2}
+			</t:bootstrapAlert>
+			
+			<t:bootstrapThumbnail title="eaters-list">
+				<hr/>
+				<t:form t:zone="submitZone">
+					<t:loop source="eaters" index="currentIndex" value="currentEater" t:encoder="valueEncoder">
+						<span class="badge">${displayCurrentIndex} <t:checkbox t:value="eaterChecked" t:disabled="hasNoMail()"/></span> ${currentEater.name}<br/><hr/>
+					</t:loop>
+					<br />
+					<t:submit t:id="send" t:event="send" t:value="message:send-button" class="btn-primary" t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog2" />
+					<div id="customMsgDialog2">
+						${message:custom-msg-label} <br /><br />
+						<t:textarea t:id="customMsgSend" value="customMsgSend"></t:textarea>						
+					</div>					
+				</t:form>
+			</t:bootstrapThumbnail>
+			
+			<p:else>
+				${message:nobody-found }
+			</p:else>
+		</t:if>
+		
+	</div>
+	
+	<script>
+		YAHOO.util.Event.onDOMReady(function(){
+			// after validation
+			call.afterDialogValidation = function(){
+				YAHOO.util.Dom.get("customMsgCall").value = "";
+				scroll(0,0);
+			};
+			send.afterDialogValidation = function(){
+				YAHOO.util.Dom.get("customMsgSend").value = "";
+				scroll(0,0);
+			};			
+		});
+    </script>
+</html>

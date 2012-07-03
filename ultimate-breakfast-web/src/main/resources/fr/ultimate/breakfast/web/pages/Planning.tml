@@ -1,0 +1,33 @@
+<html t:type="layout" title="Planning"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+	<div>
+		<t:businessExceptionMessage/>
+		<div class="hero-unit">
+			<h1>Planning</h1>
+			<p>${message:planning-msg}</p>
+			
+			<t:block t:id="unknown">
+				${message:unknown }
+			</t:block>
+			
+			<t:block t:id="results">
+				<br/>
+				<t:loop source="eaters" index="currentIndex" value="currentEater">
+					<span class="badge">${displayCurrentIndex}</span> ${currentEater.name}<br/><hr/>
+				</t:loop>
+			</t:block>
+			
+			<t:form t:zone="zoneResults">
+				<t:textfield id="team" t:validate="required" value="team" placeholder="${message:connexion-team-name-label}"/><br/>
+				<t:submit class="btn-primary" value="${message:consult-planning}"/>
+			</t:form>
+			
+			<t:zone id="zoneResults">
+				
+			</t:zone>
+			
+			<t:pagelink t:page="Index" style="font-size:80%; color:gray">${message:back-login}</t:pagelink>
+		</div>
+	</div>
+</html>
