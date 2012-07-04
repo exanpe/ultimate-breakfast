@@ -9,8 +9,8 @@
 	<description>Projet UltimateBreakfast</description>
 
 	<scm>
-		<connection>scm:svn:http://</connection>
-		<url>http://svn.ptx.fr.sopra/</url>
+		<connection>scm:git:git://github.com/exanpe/ultimate-breakfast.git</connection>
+		<url>https://github.com/exanpe/ultimate-breakfast/</url>
 	</scm>
 
 	<properties>
