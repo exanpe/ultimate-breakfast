@@ -1,4 +1,4 @@
-<html t:type="layout" title="Accueil"
+<html t:type="layout" title="message:commit-title"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
       xmlns:p="tapestry:parameter"
       xmlns:ex="tapestry-library:exanpe">
