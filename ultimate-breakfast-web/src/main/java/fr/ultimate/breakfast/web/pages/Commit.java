@@ -32,11 +32,11 @@ import fr.ultimate.breakfast.web.services.encoder.SecureEaterEncoder;
 public class Commit
 {
     @Property
-    @Persist
+    @Persist(PersistenceConstants.FLASH)
     private List<Eater> providers;
 
     @Property
-    @Persist
+    @Persist(PersistenceConstants.FLASH)
     private List<Eater> absents;
 
     @Property
@@ -103,5 +103,14 @@ public class Commit
     {
         breakfastManager.commit(securityContext.getTeam(), providers, absents);
         commitOk = true;
+
+        if (absents != null)
+        {
+            absents.clear();
+        }
+        if (providers != null)
+        {
+            providers.clear();
+        }
     }
 }
