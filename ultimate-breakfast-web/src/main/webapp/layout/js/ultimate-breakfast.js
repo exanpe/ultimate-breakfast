@@ -403,7 +403,7 @@ UltimateBreakfast.JsConsole.prototype.executeCommand = function(input)
 	
 	var url = this.url 
 				+ "?" + UltimateBreakfast.JsConsole.PARAM_COMMAND_NAME + "=" + command 
-				+ "&" + UltimateBreakfast.JsConsole.PARAM_ARGS_NAME + "=" + args;
+				+ "&" + UltimateBreakfast.JsConsole.PARAM_ARGS_NAME + "=" + encodeURIComponent(args);
 	
 	// Execute Ajax request
 	var request = YAHOO.util.Connect.asyncRequest(
