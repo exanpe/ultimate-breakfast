@@ -109,28 +109,28 @@ public class ApplicationListener
 
         BreakfastManager breakfastManager = (BreakfastManager) context.getBean(BreakfastManager.class);
         Team team = new Team();
-        team.setName("Agefos");
+        team.setName("Team");
         // enable to test
-        // team.setEmail("jmaupoux@sopragroup.com");
-        team.setPassword("age.fos");
+        // team.setEmail("email@@ultimate-breakfast.fr");
+        team.setPassword("te.am");
 
         team = breakfastManager.create(team);
 
         Eater eat = new Eater();
-        eat.setName("jmaupoux");
+        eat.setName("eater1");
         eat.setPosition(3);
         eat.setTeam(team);
-        eat.setEmail("jmaupoux@sopragroup.com");
+        eat.setEmail("eater1@ultimate-breakfast.fr");
         eat.setLastUpdate(new SimpleDateFormat("dd/MM/yyyy").parse("20/01/2014"));
 
         Eater eat2 = new Eater();
-        eat2.setName("edournes");
+        eat2.setName("eater2");
         eat2.setPosition(4);
         eat2.setTeam(team);
         eat2.setLastUpdate(new SimpleDateFormat("dd/MM/yyyy").parse("01/01/2013"));
 
         Eater eat3 = new Eater();
-        eat3.setName("grichard");
+        eat3.setName("eater3");
         eat3.setPosition(5);
         eat3.setTeam(team);
         eat3.setLastUpdate(new SimpleDateFormat("dd/MM/yyyy").parse("19/01/2012"));
@@ -143,17 +143,17 @@ public class ApplicationListener
 
         // team "vide"
         Team team2 = new Team();
-        team2.setName("LUMM");
+        team2.setName("Team2");
         // enable to test
-        // team2.setEmail("jmaupoux@sopragroup.com");
-        team2.setPassword("lu.mm");
+        // team2.setEmail("email@@ultimate-breakfast.fr");
+        team2.setPassword("te.am2");
 
         team = breakfastManager.create(team2);
 
         Team admin = new Team();
         admin.setName("admin");
         // enable to test
-        // admin.setEmail("jmaupoux@sopragroup.com");
+        // admin.setEmail("email@@ultimate-breakfast.fr");
         admin.setPassword("adminmempass");
 
         team = breakfastManager.create(admin);

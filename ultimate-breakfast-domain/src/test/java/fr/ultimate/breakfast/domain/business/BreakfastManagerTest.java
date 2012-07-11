@@ -25,15 +25,15 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @SpringBeanByType
     private BreakfastManager breakfastManager;
 
-    private static final String AGEFOS_PROJECT = "Agefos";
+    private static final String TEAM_PROJECT = "Team";
 
     @Test
     public void findByName()
     {
-        Team expected = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team expected = breakfastManager.findByName(TEAM_PROJECT);
         ReflectionAssert.assertPropertyReflectionEquals("id", 1L, expected);
-        ReflectionAssert.assertPropertyReflectionEquals("name", "Agefos", expected);
-        ReflectionAssert.assertPropertyReflectionEquals("password", "age.fos", expected);
+        ReflectionAssert.assertPropertyReflectionEquals("name", "Team", expected);
+        ReflectionAssert.assertPropertyReflectionEquals("password", "te.am", expected);
 
         Assert.assertNotNull(expected.getEaters());
         Assert.assertFalse(expected.getEaters().isEmpty());
@@ -43,7 +43,7 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void findEatersByTeam()
     {
-        Team expected = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team expected = breakfastManager.findByName(TEAM_PROJECT);
 
         List<Eater> eaters = breakfastManager.findEatersByTeam(expected);
 
@@ -55,7 +55,7 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void deleteEater()
     {
-        Team expected = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team expected = breakfastManager.findByName(TEAM_PROJECT);
 
         Assert.assertNotNull(expected.getEaters());
         Assert.assertFalse(expected.getEaters().isEmpty());
@@ -74,7 +74,7 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void addEater()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
 
         Assert.assertNotNull(team.getEaters());
         Assert.assertFalse(team.getEaters().isEmpty());
@@ -96,7 +96,7 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void updateEater()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
 
         Assert.assertNotNull(team.getEaters());
         Assert.assertFalse(team.getEaters().isEmpty());
@@ -119,7 +119,7 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void getNextMaxPosition()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
 
         Assert.assertEquals(breakfastManager.getNextMaxPosition(team), 6);
 
@@ -134,19 +134,19 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void incrementEaters()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
         int positionJmx = 0;
         int positionEdo = 0;
         List<Eater> toIncrement = new ArrayList<Eater>();
 
         for (int i = 0; i < team.getEaters().size(); i++)
         {
-            if (team.getEaters().get(i).getName().equals("jmaupoux"))
+            if (team.getEaters().get(i).getName().equals("eater1"))
             {
                 positionJmx = team.getEaters().get(i).getPosition();
                 toIncrement.add(team.getEaters().get(i));
             }
-            else if (team.getEaters().get(i).getName().equals("edournes"))
+            else if (team.getEaters().get(i).getName().equals("eater2"))
             {
                 positionEdo = team.getEaters().get(i).getPosition();
                 toIncrement.add(team.getEaters().get(i));
@@ -159,11 +159,11 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
 
         for (int i = 0; i < eaters.size(); i++)
         {
-            if (eaters.get(i).getName().equals("jmaupoux"))
+            if (eaters.get(i).getName().equals("eater1"))
             {
                 Assert.assertEquals(eaters.get(i).getPosition().intValue(), positionJmx + 1);
             }
-            else if (eaters.get(i).getName().equals("edournes"))
+            else if (eaters.get(i).getName().equals("eater2"))
             {
                 Assert.assertEquals(eaters.get(i).getPosition().intValue(), positionEdo + 1);
             }
@@ -173,16 +173,16 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void topEaters()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
         List<Eater> toTop = new ArrayList<Eater>();
 
         for (int i = 0; i < team.getEaters().size(); i++)
         {
-            if (team.getEaters().get(i).getName().equals("jmaupoux"))
+            if (team.getEaters().get(i).getName().equals("eater1"))
             {
                 toTop.add(team.getEaters().get(i));
             }
-            else if (team.getEaters().get(i).getName().equals("edournes"))
+            else if (team.getEaters().get(i).getName().equals("eater2"))
             {
                 toTop.add(team.getEaters().get(i));
             }
@@ -194,11 +194,11 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
 
         for (int i = 0; i < eaters.size(); i++)
         {
-            if (eaters.get(i).getName().equals("jmaupoux"))
+            if (eaters.get(i).getName().equals("eater1"))
             {
                 Assert.assertEquals(eaters.get(i).getPosition().intValue(), 6);
             }
-            else if (eaters.get(i).getName().equals("edournes"))
+            else if (eaters.get(i).getName().equals("eater2"))
             {
                 Assert.assertEquals(eaters.get(i).getPosition().intValue(), 6);
             }
@@ -212,8 +212,8 @@ public class BreakfastManagerTest extends UltimateBreakfastDomainBaseTest
     @Test
     public void findEaterByName()
     {
-        Team team = breakfastManager.findByName(AGEFOS_PROJECT);
-        Eater eater = breakfastManager.findEaterByName(team, "jmaupoux");
+        Team team = breakfastManager.findByName(TEAM_PROJECT);
+        Eater eater = breakfastManager.findEaterByName(team, "eater1");
         Assert.assertNotNull(eater);
         Assert.assertEquals(eater.getPosition().intValue(), 3);
     }

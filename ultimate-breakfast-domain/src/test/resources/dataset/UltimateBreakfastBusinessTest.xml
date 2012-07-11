@@ -2,10 +2,10 @@
 <dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataset.xsd">
 
 <!-- Agefos team -->
-<TEAM id="1" name="Agefos" password="age.fos" email="lumm@sopragroup.com"/>
+<TEAM id="1" name="Team" password="te.am" email="team@@ultimate-breakfast.fr"/>
 
-<EATER id="1" name="jmaupoux" position="3" team_id="1"/>
-<EATER id="2" name="edournes" position="4" team_id="1"/>
-<EATER id="3" name="grichard" position="5" team_id="1"/>
+<EATER id="1" name="eater1" position="3" team_id="1"/>
+<EATER id="2" name="eater2" position="4" team_id="1"/>
+<EATER id="3" name="eater3" position="5" team_id="1"/>
 
 </dataset>

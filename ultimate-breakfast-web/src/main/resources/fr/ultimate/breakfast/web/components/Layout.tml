@@ -83,7 +83,7 @@
 			<hr />
 			<footer>
 				<span>&copy; UltimateBreakfast 2012</span> | 
-				<i class="icon-tags" />&nbsp;<a href="mailto:jmaupoux@sopragroup.com;lguerin@sopragroup.com?subject=[ultimate-breakfast] BUG !">Bug ?</a> | 
+				<i class="icon-tags" />&nbsp;<a href="mailto:exanpe@gmail.com?subject=[ultimate-breakfast] BUG !">Bug ?</a> | 
 				<i class="icon-envelope" />&nbsp;<a href="mailto:${aScope.adminMail}?subject=[ultimate-breakfast] Contact">${message:admin-contact}</a> |   
 				<i class="icon-download-alt" />&nbsp;<a href="https://github.com/exanpe/ultimate-breakfast" target="_blank">${message:source-code-title}</a>
 			</footer>
