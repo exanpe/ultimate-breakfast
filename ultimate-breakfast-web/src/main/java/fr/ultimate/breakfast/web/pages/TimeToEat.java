@@ -19,6 +19,7 @@ import org.apache.tapestry5.ioc.annotations.Inject;
 
 import fr.ultimate.breakfast.common.exception.TechnicalException;
 import fr.ultimate.breakfast.domain.business.BreakfastManager;
+import fr.ultimate.breakfast.domain.configuration.UltimateBreakfastConfiguration;
 import fr.ultimate.breakfast.domain.model.Eater;
 import fr.ultimate.breakfast.domain.model.Team;
 import fr.ultimate.breakfast.domain.security.UltimateBreakfastSecurityContext;
@@ -162,4 +163,17 @@ public class TimeToEat
         return StringUtils.isEmpty(currentEater.getEmail());
     }
 
+    @Inject
+    private UltimateBreakfastConfiguration configuration;
+
+    public boolean isMailDisabled()
+    {
+        return !configuration.isMailEnabled();
+    }
+
+    public String getButtonMailState()
+    {
+        if (!isMailDisabled()) { return ""; }
+        return "disabled";
+    }
 }

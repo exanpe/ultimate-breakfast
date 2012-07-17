@@ -7,6 +7,13 @@
 		<t:bootstrapTitle title="timetoeat-title" />
 		
 		<t:if test="eaters">
+			<t:if test="mailDisabled">
+				<div class="alert alert-error">
+					${message:mail.disabled }
+				</div>		
+				<hr/>
+			</t:if>
+		
 			<t:zone t:id="submitZone" visible="false"/>
 		
 			<t:block id="sendOk">
@@ -31,8 +38,9 @@
 					
 			<t:form t:id="callForBreakfast" t:zone="submitZone">
 				<i class="icon-volume-up"></i> &nbsp; 
-				<t:submit t:id="call" t:event="callForBreakfast" t:value="message:callForBreakfast" class="btn btn-info" 
-				          t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog" />
+				<t:submit t:id="call" t:event="callForBreakfast" t:value="message:callForBreakfast" class="btn btn-info ${buttonMailState}" 
+				          t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog" 
+				          t:disabled="mailDisabled"/>
 				<div id="customMsgDialog">
 					${message:custom-msg-label} <br /><br />
 					<t:textarea t:id="customMsgCall" value="customMsgCall"></t:textarea>						
@@ -60,7 +68,7 @@
 						<span class="badge">${displayCurrentIndex} <t:checkbox t:value="eaterChecked" t:disabled="hasNoMail()"/></span> ${currentEater.name}<br/><hr/>
 					</t:loop>
 					<br />
-					<t:submit t:id="send" t:event="send" t:value="message:send-button" class="btn-primary" t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog2" />
+					<t:submit t:id="send" t:event="send" t:value="message:send-button" class="btn-primary ${buttonMailState}" t:mixins="exanpe/dialog" t:title="dialog-title" t:yesLabelButton="dialog-yes" t:noLabelButton="dialog-no" t:targetHtmlId="customMsgDialog2" t:disabled="mailDisabled"/>
 					<div id="customMsgDialog2">
 						${message:custom-msg-label} <br /><br />
 						<t:textarea t:id="customMsgSend" value="customMsgSend"></t:textarea>						
