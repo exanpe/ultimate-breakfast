@@ -27,6 +27,43 @@
 			<artifactId>spring-security-core</artifactId>
 			<version>${spring-security-version}</version>
 		</dependency>
+    
+        <!-- AOP -->
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>org.springframework.asm</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>org.springframework.aop</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>org.springframework.aspects</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>org.springframework.expression</artifactId>
+          <version>${spring-version}</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>1.6.11</version>
+        </dependency>
+     
+        <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjweaver</artifactId>
+          <version>1.6.11</version>
+        </dependency>
 
 		<!-- Dependances pour Unitils -->
 		<dependency>
