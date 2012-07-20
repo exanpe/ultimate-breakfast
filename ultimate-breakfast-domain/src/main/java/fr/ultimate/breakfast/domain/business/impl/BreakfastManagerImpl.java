@@ -240,4 +240,11 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
             throw new TechnicalException("Mail send impossible", e1);
         }
     }
+
+    @Override
+    public long countEaters()
+    {
+        return crudDAO.count(Eater.class);
+    }
+
 }

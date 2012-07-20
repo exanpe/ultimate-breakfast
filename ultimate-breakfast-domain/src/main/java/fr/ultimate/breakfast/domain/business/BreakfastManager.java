@@ -38,4 +38,6 @@ public interface BreakfastManager extends DefaultManager<Team, Integer>
     Eater findEaterByName(Team team, String username);
 
     void callTeamForBreakfast(Team team, String customMsg);
+
+    long countEaters();
 }

@@ -3,7 +3,7 @@
       xmlns:p="tapestry:parameter">
 	<div>
 		<t:businessExceptionMessage/>
-		<div class="hero-unit">
+		<div class="hero-unit" style="padding-bottom:10px">
 			<h1><img src="${asset:context:layout/img/ub.png}" alt="Ultimate Breakfast" /></h1>
 			<br /><br />
 			<t:if test="loginFailed">
@@ -17,6 +17,13 @@
 			</form>
 			
 			<t:pagelink t:page="LostAccess" style="font-size:80%; color:gray">${message:access-lost}</t:pagelink>
+			
+			<br/><br/><br/>
+			<blockquote>
+			<small>
+				${message:count-part1 } ${teamsCount} ${message:count-part2 } ${eatersCount} ${message:count-part3 }
+			</small>
+			</blockquote>
 		</div>
 	</div>
 </html>
