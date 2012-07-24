@@ -4,6 +4,7 @@
 package fr.ultimate.breakfast.domain.business.impl;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +13,7 @@ import javax.mail.MessagingException;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -175,10 +177,14 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
 
     @Override
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
-    public void commit(Team p, List<Eater> providers, List<Eater> absents)
+    public void commit(Team team, List<Eater> providers, List<Eater> absents)
     {
-        topEaters(p, providers);
+        topEaters(team, providers);
         incrementEaters(absents);
+
+        team = find(team.getId());
+        team.setLastCommit(new Date());
+        update(team);
     }
 
     @Override
@@ -245,6 +251,18 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
     public long countEaters()
     {
         return crudDAO.count(Eater.class);
+    }
+
+    @Override
+    public boolean hasCommittedToday(Team team)
+    {
+        Date lastCommit = find(team.getId()).getLastCommit();
+
+        if (lastCommit == null) { return false; }
+
+        Date today = DateUtils.truncate(new Date(), Calendar.DATE);
+
+        return lastCommit.equals(today);
     }
 
 }

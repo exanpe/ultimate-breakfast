@@ -40,4 +40,6 @@ public interface BreakfastManager extends DefaultManager<Team, Integer>
     void callTeamForBreakfast(Team team, String customMsg);
 
     long countEaters();
+
+    boolean hasCommittedToday(Team team);
 }

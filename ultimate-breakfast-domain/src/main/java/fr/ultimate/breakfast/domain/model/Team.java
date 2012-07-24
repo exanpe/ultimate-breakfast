@@ -73,6 +73,12 @@ public class Team implements UserDetails, Serializable
     private Date lastNotification;
 
     /**
+     * Last commit for the team
+     */
+    @Temporal(TemporalType.DATE)
+    private Date lastCommit;
+
+    /**
      * Eaters
      */
     @OrderBy("position,lastUpdate")
@@ -173,6 +179,22 @@ public class Team implements UserDetails, Serializable
     public void setLastNotification(Date lastNotification)
     {
         this.lastNotification = lastNotification;
+    }
+
+    /**
+     * @return the lastCommit
+     */
+    public Date getLastCommit()
+    {
+        return lastCommit;
+    }
+
+    /**
+     * @param lastCommit the lastCommit to set
+     */
+    public void setLastCommit(Date lastCommit)
+    {
+        this.lastCommit = lastCommit;
     }
 
     @Override

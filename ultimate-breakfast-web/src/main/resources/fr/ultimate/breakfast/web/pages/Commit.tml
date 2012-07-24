@@ -18,9 +18,11 @@
 				${message:select-help2}
 			</t:bootstrapAlert>
 			
-			<t:form style="padding:10px;" class="nobanner">
+			<t:form t:id="form" style="padding:10px;" class="nobanner">
 				<t:errors/>
-			
+				
+				<t:hidden t:id="forceDoubleCommit" id="forceDoubleCommit" value="forceDoubleCommit"/>
+				
 				<t:bootstrapThumbnail title="thanks-to">
 					<t:palette encoder="valueEncoder" model="eaterModel" selected="providers"
 			 	           select="asset:classpath:fr/exanpe/t5/lib/components/img/t5/select.png" 
@@ -40,6 +42,21 @@
 				<br/>
 				<t:submit value="message:process-commit-label" class="btn btn-primary"/>
 			</t:form>
+		
+		<t:if test="doubleCommit">
+		
+			<t:actionlink t:action="forceDoubleCommit" t:id="doubleCommit" t:mixins="exanpe/dialog" t:title="doubleCommit-title" t:yesLabelButton="doubleCommit-yes" t:noLabelButton="doubleCommit-no" t:message="doubleCommit-message"/>
+			<script type="text/javascript">
+				YAHOO.util.Event.onDOMReady(function(){	
+					doubleCommit.show();
+					
+					doubleCommit._doAction = function() {
+						YAHOO.util.Dom.get('forceDoubleCommit').value = "true";
+						YAHOO.util.Dom.get('form').submit();
+					};
+				});
+			</script>
+		</t:if>
 		
 		<p:else>
 			${message:nobody-found }

@@ -98,9 +98,23 @@ public class Commit
     @Persist(PersistenceConstants.FLASH)
     private boolean commitOk;
 
+    @Property
+    @Persist(PersistenceConstants.FLASH)
+    private boolean doubleCommit;
+
+    @Property
+    @Persist(PersistenceConstants.FLASH)
+    private boolean forceDoubleCommit;
+
     @OnEvent(value = EventConstants.SUCCESS, component = "form")
     void commit()
     {
+        if (breakfastManager.hasCommittedToday(securityContext.getTeam()) && !forceDoubleCommit)
+        {
+            doubleCommit = true;
+            return;
+        }
+
         breakfastManager.commit(securityContext.getTeam(), providers, absents);
         commitOk = true;
 
@@ -113,4 +127,5 @@ public class Commit
             providers.clear();
         }
     }
+
 }
