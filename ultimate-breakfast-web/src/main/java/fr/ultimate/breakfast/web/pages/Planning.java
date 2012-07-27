@@ -1,5 +1,6 @@
 package fr.ultimate.breakfast.web.pages;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.tapestry5.Block;
@@ -37,6 +38,10 @@ public class Planning
     @Persist(PersistenceConstants.FLASH)
     private int currentIndex;
 
+    @Property
+    @Persist(PersistenceConstants.FLASH)
+    private Date lastNotification;
+
     @Inject
     private BreakfastManager breakfastManager;
 
@@ -54,6 +59,8 @@ public class Planning
         if (t == null) { return unknown; }
 
         eaters = breakfastManager.findEatersByTeam(t);
+
+        lastNotification = t.getLastNotification();
 
         return results;
     }

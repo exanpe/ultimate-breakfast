@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.sql.DataSource;
 
@@ -113,6 +114,7 @@ public class ApplicationListener
         // enable to test
         // team.setEmail("email@@ultimate-breakfast.fr");
         team.setPassword("te.am");
+        team.setLastNotification(new Date());
 
         team = breakfastManager.create(team);
 

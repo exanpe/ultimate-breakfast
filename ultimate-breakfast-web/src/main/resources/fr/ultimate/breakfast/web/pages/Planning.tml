@@ -8,11 +8,21 @@
 			<p>${message:planning-msg}</p>
 			
 			<t:block t:id="unknown">
+				<br/>
 				${message:unknown }
+				<br/>
+				<br/>
 			</t:block>
 			
 			<t:block t:id="results">
 				<br/>
+				<t:if test="lastNotification">
+				${message:last-notification} : <t:output format="literal:dd/MM/yyyy" value="lastNotification"/>
+					<p:else>
+						${message:no-last-notification}
+					</p:else>				
+				</t:if>
+				<hr/>
 				<t:loop source="eaters" index="currentIndex" value="currentEater">
 					<span class="badge">${displayCurrentIndex}</span> ${currentEater.name}<br/><hr/>
 				</t:loop>
