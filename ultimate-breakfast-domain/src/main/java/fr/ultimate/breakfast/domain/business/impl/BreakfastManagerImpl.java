@@ -265,4 +265,15 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
         return lastCommit.equals(today);
     }
 
+    @Override
+    @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
+    public void updateProfile(Team team, String password)
+    {
+        if (StringUtils.isNotBlank(password))
+        {
+            encodePassword(team, password);
+        }
+        update(team);
+    }
+
 }

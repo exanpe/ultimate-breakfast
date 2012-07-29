@@ -112,7 +112,7 @@ public class ApplicationListener
         Team team = new Team();
         team.setName("Team");
         // enable to test
-        // team.setEmail("email@@ultimate-breakfast.fr");
+        // team.setEmail("email@ultimate-breakfast.fr");
         team.setPassword("te.am");
         team.setLastNotification(new Date());
 

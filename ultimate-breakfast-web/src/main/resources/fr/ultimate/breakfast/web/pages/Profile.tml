@@ -1,0 +1,23 @@
+<html t:type="layout" title="message:profile-title"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+      xmlns:p="tapestry:parameter">
+      
+	<t:bootstrapTitle title="profile-title" />	
+
+	<div class="hero-unit">	
+		<t:form t:id="form" autofocus="false">
+			<t:errors />
+			<t:label for="name" class="control-label">${message:profile-name-label}</t:label>
+			<t:textfield t:id="name" t:value="name" t:validate="required" /><br />
+			<t:label for="email" class="control-label">${message:profile-email-label}</t:label>
+			<t:textfield t:id="email" t:value="email" t:validate="required,email"/><br />
+			<t:label for="password" class="control-label">${message:profile-password-label}</t:label>
+			<t:error for="password" />
+			<t:passwordfield t:id="password" t:value="password" t:validate="minlength=4" autocomplete="off" /><br />
+			<t:label for="verifyPassword" class="control-label">${message:profile-verifypassword-label}</t:label>
+			<t:passwordfield t:id="verifyPassword" t:value="verifyPassword" t:validate="minlength=4" autocomplete="off" /><br />					
+			<br />					
+			<t:submit t:value="message:profile-submit-label" class="btn btn-primary"/><br /><br />
+		</t:form>
+	</div>
+</html>

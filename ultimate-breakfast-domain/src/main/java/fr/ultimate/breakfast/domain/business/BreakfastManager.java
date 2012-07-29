@@ -42,4 +42,6 @@ public interface BreakfastManager extends DefaultManager<Team, Integer>
     long countEaters();
 
     boolean hasCommittedToday(Team team);
+
+    void updateProfile(Team team, String password);
 }

@@ -30,7 +30,7 @@
 						<ul class="nav pull-right">
 							<t:if test="isAuthenticated()">
 								<li>
-									<t:pagelink page="Index"><i class="icon-user icon-white" />&nbsp; &nbsp;${username}</t:pagelink>
+									<t:pagelink page="Profile"><i class="icon-user icon-white" />&nbsp; &nbsp;${username}</t:pagelink>
 								</li>
 							</t:if>
 							<li>

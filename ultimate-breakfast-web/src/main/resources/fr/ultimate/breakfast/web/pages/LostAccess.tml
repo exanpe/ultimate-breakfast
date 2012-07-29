@@ -10,6 +10,13 @@
 			${message:description}
 		</t:bootstrapAlert>		
 
+		<t:if test="sendOk">
+			<ex:border>
+				${message:reset-ok}
+			</ex:border>
+			<br/>
+		</t:if>
+
 		<t:bootstrapThumbnail>
 			<t:form t:id="form">
 				<t:errors/>
@@ -19,12 +26,6 @@
 				<t:submit t:value="message:submit-label" class="btn btn-primary"/>
 			</t:form>
 		</t:bootstrapThumbnail>
-		
-		<t:if test="sendOk">
-			<br/><br/>
-			<ex:border>
-				${message:reset-ok}
-			</ex:border>
-		</t:if>
+
 	</div>
 </html>
