@@ -190,7 +190,7 @@
                   <configLocation>
                     <!-- 
                       fichier xml contenu dans conf-reporting
-                      decrivant les regles de lumm pour checkstyle
+                      decrivant les regles pour checkstyle
                     -->
                    ultimate-breakfast-checkstyle.xml
                   </configLocation>

@@ -73,13 +73,10 @@ public class Profile
     @OnEvent(value = EventConstants.SUCCESS, component = "form")
     Object update()
     {
-        if (verifyPassword != null || password != null)
+        if ((verifyPassword != null && !verifyPassword.equals(password)) || (password != null && !password.equals(verifyPassword)))
         {
-            if (!verifyPassword.equals(password))
-            {
-                form.recordError(messages.get("password-match-error"));
-                return null;
-            }
+            form.recordError(messages.get("password-match-error"));
+            return null;
         }
 
         if (!securityContext.getTeam().getName().equals(name))
