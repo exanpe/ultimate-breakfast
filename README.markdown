@@ -15,3 +15,5 @@ Features :
  - A mail engine to send mail to members
  
 Feel free to download a bundle !
+
+![Ultimate Breakfast](https://github.com/exanpe/ultimate-breakfast/blob/master/ub-screen.png)
