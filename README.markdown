@@ -16,4 +16,4 @@ Features :
  
 Feel free to download a bundle !
 
-![Ultimate Breakfast](https://github.com/exanpe/ultimate-breakfast/blob/master/ub-screen.png)
+![Ultimate Breakfast](https://github.com/downloads/exanpe/ultimate-breakfast/ub-screen.png)
