@@ -72,6 +72,7 @@ public class UltimateBreakfastRequestExceptionHandler implements RequestExceptio
         this.componentSource = componentSource;
         this.renderer = renderer;
         this.request = request;
+        this.productionMode = productionMode;
     }
 
     /**

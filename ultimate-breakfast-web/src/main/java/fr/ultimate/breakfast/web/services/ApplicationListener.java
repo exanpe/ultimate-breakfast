@@ -155,7 +155,7 @@ public class ApplicationListener
         Team admin = new Team();
         admin.setName("admin");
         // enable to test
-        // admin.setEmail("email@@ultimate-breakfast.fr");
+        // admin.setEmail("email@ultimate-breakfast.fr");
         admin.setPassword("adminmempass");
 
         team = breakfastManager.create(admin);

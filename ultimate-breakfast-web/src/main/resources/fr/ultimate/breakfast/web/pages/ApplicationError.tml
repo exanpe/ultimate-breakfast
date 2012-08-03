@@ -1,5 +1,13 @@
-<html t:type="layout" title="Accueil"
+<html t:type="layout" title="message:generic-error-title"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
       xmlns:p="tapestry:parameter">
-	${message:generic-error-message } : ${message }
+      
+      <div class="alert alert-block">
+      	<img src="${asset:context:layout/img/ub-error.png}" alt="${message:generic-error-title}" /><br /><br />
+	  	<p>
+		  	${message:generic-error-message} : ${message}.
+			<br />
+		  	${message:generic-error-text} <a href="mailto:${aScope.adminMail}?subject=[ultimate-breakfast] ${message:generic-error-title}">${message:generic-error-admin-contact}</a>.
+	  	</p>
+	  </div>
 </html>
