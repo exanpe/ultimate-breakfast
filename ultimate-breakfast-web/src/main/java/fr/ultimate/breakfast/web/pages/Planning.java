@@ -51,6 +51,15 @@ public class Planning
     @Inject
     private Block results;
 
+    @Property
+    private Block displayBlock;
+
+    void onActivate(String teamName)
+    {
+        this.team = teamName;
+        displayBlock = (Block) search();
+    }
+
     @OnEvent(value = EventConstants.ACTION)
     Object search()
     {

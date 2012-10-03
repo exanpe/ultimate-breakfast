@@ -33,8 +33,10 @@
 				<t:submit class="btn-primary" value="${message:consult-planning}"/>
 			</t:form>
 			
-			<t:zone id="zoneResults">
-				
+			<t:zone id="zoneResults" style="background-image: none; background-color: rgb(255, 255, 255);">
+				<t:if test="displayBlock">
+					<t:delegate to="displayBlock"/>
+				</t:if>
 			</t:zone>
 			
 			<t:pagelink t:page="Index" style="font-size:80%; color:gray">${message:back-login}</t:pagelink>

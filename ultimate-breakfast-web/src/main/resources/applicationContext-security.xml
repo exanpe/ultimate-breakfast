@@ -31,6 +31,7 @@
         <intercept-url pattern="/SignUp*" access="permitAll"/>
         <intercept-url pattern="/LostAccess*" access="permitAll"/>
         <intercept-url pattern="/Planning*" access="permitAll"/>
+        <intercept-url pattern="/Planning/**" access="permitAll"/>
         <intercept-url pattern="/Help*" access="permitAll"/>
         <intercept-url pattern="/Index" access="permitAll"/>
         <intercept-url pattern="/j_*" access="permitAll"/>
