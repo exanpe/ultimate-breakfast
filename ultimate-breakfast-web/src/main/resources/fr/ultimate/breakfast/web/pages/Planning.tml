@@ -14,7 +14,13 @@
 				<br/>
 			</t:block>
 			
-			<t:block t:id="results">
+			<t:block t:id="results">						
+				<span class="label pull-right">
+					<t:pagelink t:page="Planning" t:context="team" style="color:white">
+						<i class="icon-info-sign icon-white"/> ${message:direct-access } 
+					</t:pagelink>
+				</span>
+
 				<br/>
 				<t:if test="lastNotification">
 				${message:last-notification} : <t:output format="literal:dd/MM/yyyy" value="lastNotification"/>

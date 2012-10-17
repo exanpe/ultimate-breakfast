@@ -10,6 +10,7 @@ import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.RequestGlobals;
 
 import fr.ultimate.breakfast.domain.business.BreakfastManager;
 import fr.ultimate.breakfast.domain.model.Eater;
@@ -42,6 +43,9 @@ public class Planning
     @Persist(PersistenceConstants.FLASH)
     private Date lastNotification;
 
+    @Property
+    private String contextRoot;
+
     @Inject
     private BreakfastManager breakfastManager;
 
@@ -50,6 +54,9 @@ public class Planning
 
     @Inject
     private Block results;
+
+    @Inject
+    private RequestGlobals globals;
 
     @Property
     private Block displayBlock;
@@ -70,6 +77,8 @@ public class Planning
         eaters = breakfastManager.findEatersByTeam(t);
 
         lastNotification = t.getLastNotification();
+
+        contextRoot = globals.getRequest().getContextPath();
 
         return results;
     }
