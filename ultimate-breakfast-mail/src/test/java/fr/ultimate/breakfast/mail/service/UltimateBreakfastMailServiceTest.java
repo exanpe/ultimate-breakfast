@@ -173,7 +173,7 @@ public class UltimateBreakfastMailServiceTest extends UnitilsTestNG
         emails.add(MAIL_TEST_TO);
         try
         {
-            mailService.callTeamForBreakfast(emails, "Agefos", null);
+            mailService.callTeamForBreakfast(emails, "Agefos", null, "http://fakeurl/Agefos");
         }
         catch (MessagingException e)
         {
@@ -183,6 +183,7 @@ public class UltimateBreakfastMailServiceTest extends UnitilsTestNG
         SmtpMessage email = (SmtpMessage) smtpServer.getReceivedEmail().next();
         Assert.assertEquals(MAIL_TEST_FROM, email.getHeaderValue("From"));
         Assert.assertEquals(MAIL_TEST_TO, email.getHeaderValue("To"));
+        Assert.assertTrue(email.getBody().contains("fakeurl/Agefos"));
         Assert.assertEquals(1, smtpServer.getReceivedEmailSize());
     }
 
@@ -193,9 +194,10 @@ public class UltimateBreakfastMailServiceTest extends UnitilsTestNG
         List<String> emails = new ArrayList<String>();
         emails.add(MAIL_TEST_TO);
         String customMsg = "Dans le bureau 6A22";
+        String planningTeamUrl = "http://fakeurl/Agefos";
         try
         {
-            mailService.callTeamForBreakfast(emails, "Agefos", customMsg);
+            mailService.callTeamForBreakfast(emails, "Agefos", customMsg, planningTeamUrl);
         }
         catch (MessagingException e)
         {

@@ -16,6 +16,7 @@ import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.PageRenderLinkSource;
 
 import fr.ultimate.breakfast.common.exception.TechnicalException;
 import fr.ultimate.breakfast.domain.business.BreakfastManager;
@@ -67,6 +68,9 @@ public class TimeToEat
     @Inject
     private UltimateBreakfastSecurityContext securityContext;
 
+    @Inject
+    private PageRenderLinkSource linkSource;
+
     void onActivate()
     {
         // always need a fresh copy
@@ -90,7 +94,9 @@ public class TimeToEat
     {
         try
         {
-            breakfastManager.callTeamForBreakfast(securityContext.getTeam(), customMsgCall);
+            Team team = securityContext.getTeam();
+            String planningTeamLink = linkSource.createPageRenderLinkWithContext(Planning.class, team.getName()).toAbsoluteURI();
+            breakfastManager.callTeamForBreakfast(team, customMsgCall, planningTeamLink);
         }
         catch (TechnicalException e)
         {

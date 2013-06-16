@@ -168,7 +168,7 @@ public class UltimateBreakfastMailServiceImpl implements UltimateBreakfastMailSe
     }
 
     @Override
-    public void callTeamForBreakfast(List<String> emails, String teamName, String customMsg) throws MessagingException
+    public void callTeamForBreakfast(List<String> emails, String teamName, String customMsg, String planningTeamUrl) throws MessagingException
     {
         if (CollectionUtils.isEmpty(emails)) { return; }
 
@@ -177,6 +177,7 @@ public class UltimateBreakfastMailServiceImpl implements UltimateBreakfastMailSe
         Map<String, String> model = new HashMap<String, String>();
         model.put("teamName", teamName);
         model.put("customMsg", customMsg);
+        model.put("planningTeamUrl", planningTeamUrl);
 
         // TODO i18n mail
         sendTemplatedEmail(this.from, emails, null, BREAKFAST_CALL_SUBJECT, "mail/breakfast-call.vm", model);

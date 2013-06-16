@@ -7,6 +7,9 @@
   	Vous êtes convié au petit déjeuner de l'équipe ${teamName} !<br/>
   	A tout de suite !
   	
+  	<br /><br />
+  	Pour consulter le planning de votre équipe, cliquez <a href="${planningTeamUrl}">ici</a>.
+  	
   	#if( $customMsg )
   	<br /><br />
   	<i>

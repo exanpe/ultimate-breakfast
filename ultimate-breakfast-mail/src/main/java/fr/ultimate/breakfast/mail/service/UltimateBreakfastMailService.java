@@ -83,7 +83,8 @@ public interface UltimateBreakfastMailService
      * @param cc the carbon copy recipient, i.e le manager of the team
      * @param teamName the name of the team calling for breakfast
      * @param customMsg a custom message to add to the mail
+     * @param planningTeamUrl the public team planning URL
      * @throws MessagingException si le mail ne peut etre envoyé
      */
-    void callTeamForBreakfast(List<String> emails, String teamName, String customMsg) throws MessagingException;
+    void callTeamForBreakfast(List<String> emails, String teamName, String customMsg, String planningTeamUrl) throws MessagingException;
 }

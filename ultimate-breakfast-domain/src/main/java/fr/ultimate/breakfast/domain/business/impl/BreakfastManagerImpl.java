@@ -221,7 +221,7 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
     }
 
     @Override
-    public void callTeamForBreakfast(Team team, String customMsg)
+    public void callTeamForBreakfast(Team team, String customMsg, String planningTeamUrl)
     {
         List<Eater> eaters = findEatersByTeam(team);
 
@@ -239,7 +239,7 @@ public class BreakfastManagerImpl extends DefaultManagerImpl<Team, Integer> impl
 
         try
         {
-            mailService.callTeamForBreakfast(emails, team.getName(), customMsg);
+            mailService.callTeamForBreakfast(emails, team.getName(), customMsg, planningTeamUrl);
         }
         catch (MessagingException e1)
         {
