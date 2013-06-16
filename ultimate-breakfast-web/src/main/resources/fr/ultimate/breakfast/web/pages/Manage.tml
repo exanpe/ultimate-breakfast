@@ -52,7 +52,7 @@
 						<t:error for="name"/>
 						<t:label for="name" class="control-label" /> <t:textfield t:id="name" t:value="editEater.name" t:validate="required"/> <br />
 						<t:error for="position"/>
-						<t:label for="position"/> <t:textfield t:id="position" t:value="editEater.position"  t:validate="regexp=^[0-9]*$"/> <br />
+						<t:label for="position"/> <t:textfield t:id="position" t:value="editEater.position"  t:validate="required,regexp=^[0-9]*$"/> <br />
 						<t:error for="mail"/>
 						<t:label for="mail"/> <t:textfield t:id="mail" t:value="editEater.email" t:validate="email"/> <br />
 						<t:submit t:value="message:submit-label" class="btn-primary"/>
