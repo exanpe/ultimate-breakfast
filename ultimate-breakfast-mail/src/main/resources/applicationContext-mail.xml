@@ -14,6 +14,8 @@
 	  location="classpath*:mail.properties" order="3" />
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="username" value="${mail.server.username}"/>
+        <property name="password" value="${mail.server.password}"/>
 		<property name="host" value="${mail.server.host}" />
 		<property name="port" value="${mail.server.port}" />
         <property name="defaultEncoding" value="UTF-8"/>
